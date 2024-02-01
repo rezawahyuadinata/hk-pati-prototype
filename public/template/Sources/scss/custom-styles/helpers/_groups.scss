@@ -1,0 +1,133 @@
+/*
+*
+* Element groups
+* --------------------------------------------------
+*/
+
+html .page {
+  .group {
+    @include group(15px, 20px);
+  }
+
+  .group-sm {
+    @include group(10px, 10px);
+  }
+
+  .group-md {
+    @include group(20px);
+  }
+
+  .group-lg {
+    @include group(30px, 20px);
+
+    @media (min-width: $screen-lg-min) {
+      @include group(40px, 20px);
+    }
+  }
+
+  .group-xl {
+    @include group(30px, 20px);
+
+    @media (min-width: $screen-lg-min) {
+      @include group(50px, 20px);
+    }
+
+    @media (min-width: $screen-xl-min) {
+      @include group(75px, 20px);
+    }
+  }
+
+  .group-middle {
+    display: inline-table;
+    vertical-align: middle;
+
+    > * {
+      vertical-align: middle;
+    }
+  }
+
+  .group-buttons {
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      .button {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+    }
+  }
+
+  .group-sm-justify {
+    .button {
+      min-width: 170px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      @include display-flex;
+      @include flex-direction(row);
+      @include align-items(center);
+      @include justify-content(center);
+
+      > * {
+        @include flex-grow(1);
+        @include flex-shrink(0);
+      }
+
+      .buttons {
+        min-width: 130px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+html .page .group-sm.group-sm_mod-1 {
+  @media (max-width: $screen-xs-min - 1px) {
+    > * {
+      display: block;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.link-block-group {
+  @include display-flex;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include align-items(stretch);
+  @include justify-content(center);
+  width: 100%;
+
+  @media (max-width: $screen-xs-min - 1px) {
+    .link-block {
+      &:nth-child(odd) {
+        background: $gray-9;
+      }
+
+      &:nth-child(even) {
+        background: $gray-4;
+      }
+    }
+  }
+  
+  @media (min-width: $screen-xs-min) {
+    > * {
+      @include flex-grow(1);
+      width: 50%;
+    }
+
+    .link-block {
+      background: $gray-4-1;
+      &.link-block-light {
+        background: $gray-4;
+      }
+    }
+  }
+}
+
+.post-light-group {
+  > li + li { margin-top: 15px; }
+
+  @media (min-width: $screen-md-min) {
+    > li + li { margin-top: 25px; }
+  }
+}

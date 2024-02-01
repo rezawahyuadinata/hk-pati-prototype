@@ -1,0 +1,35 @@
+//
+//
+// Main layout
+// ==================================================
+//
+
+// Page
+//
+
+.page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh !important;
+  width: 100%;
+}
+
+.body-fullpage {
+  @include display-flex;
+  width: 100%;
+}
+
+// Page header
+//
+
+.page-header {
+  padding: 0;
+  margin: 0;
+  border-bottom: none;
+}
+
+// Page footer
+//
+
+.page-footer {
+}

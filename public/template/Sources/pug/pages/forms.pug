@@ -1,0 +1,215 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-quote-light
+include ../elements/_ui-quote-creative
+
+block variables
+	- var activeIndex = 7
+	- var pageName = 'Forms'
+
+
+block page
+	// Page Header
+	include ../sections/_header-fullwidth
+
+	section.breadcrumbs-custom.parallax-container(data-parallax-img=src = 'images/bg-image-11.jpg')
+		.parallax-content
+			.shell
+				h2.breadcrumbs-custom__title Forms
+
+				ul.breadcrumbs-custom__path
+					li: a(href='index.html') Home
+					li: a(href='#') Elements
+					li.active Forms
+
+	section.section.section-xs.bg-gray-1.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Contact form
+
+	// Contact us
+	section.section.section-sm.bg-white.text-center
+		.shell
+			.range.range-sm-center
+				.cell-sm-10.cell-md-7.cell-lg-6
+					h3 Contact us
+					// RD Mailform
+					form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+						.range.range-sm-bottom.range-20
+							.cell-sm-6
+								.form-wrap
+									input#contact-first-name.form-input(type="text" name="first-name" data-constraints='@Required')
+									label.form-label(for="contact-first-name") First name
+
+							.cell-sm-6
+								.form-wrap
+									input#contact-last-name.form-input(type="text" name="last-name" data-constraints='@Required')
+									label.form-label(for="contact-last-name") Last name
+
+							.cell-xs-12
+								.form-wrap
+									label.form-label(for="contact-message") Your Message
+									textarea#contact-message.form-input(name="message" data-constraints="@Required")
+
+							.cell-sm-6
+								.form-wrap
+									input#contact-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+									label.form-label(for="contact-email") E-mail
+
+							.cell-sm-6
+								button(type="submit").button.button-block.button-primary Send Message
+	="\n"
+
+	section.section.section-xs.bg-gray-1.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Contact form with info
+
+	// Get in Touch
+	section.section.section-lg.bg-white.novi-background.bg-cover
+		.shell
+			.layout-bordered
+				.layout-bordered__main.text-center
+					.layout-bordered__main-inner
+						h3 Get in Touch
+						p We are available 24/7 by fax, e-mail or by phone. You can also use our quick contact form to ask a question about our services and projects.
+
+						// RD Mailform
+						form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+							.range.range-fix.range-sm-bottom.range-20
+								.cell-sm-6
+									.form-wrap
+										input#contact-first-name-1.form-input(type="text" name="first-name" data-constraints='@Required')
+										label.form-label(for="contact-first-name-1") First name
+
+								.cell-sm-6
+									.form-wrap
+										input#contact-phone-1.form-input(type="text" name="phone" data-constraints='@Numeric @Required')
+										label.form-label(for="contact-phone-1") Phone
+
+								.cell-xs-12
+									.form-wrap
+										label.form-label(for="contact-message-1") Your Message
+										textarea#contact-message-1.form-input(name="message" data-constraints="@Required")
+
+								.cell-sm-6
+									.form-wrap
+										input#contact-email-1.form-input(type="email" name="email" data-constraints="@Email @Required")
+										label.form-label(for="contact-email-1") E-mail
+
+								.cell-sm-6
+									button(type="submit").button.button-block.button-primary Send Message
+
+				.layout-bordered__aside
+					.layout-bordered__aside-item
+						p.heading-8 Get social
+						ul.list-inline-xs
+							li: a.icon.novi-icon.icon-middle.icon-sm.icon-default.fa.fa-facebook(href='#')
+							li: a.icon.novi-icon.icon-middle.icon-sm.icon-default.fa.fa-twitter(href='#')
+							li: a.icon.novi-icon.icon-middle.icon-sm.icon-default.fa.fa-google(href='#')
+							li: a.icon.novi-icon.icon-middle.icon-sm.icon-default.fa.fa-youtube(href='#')
+
+					.layout-bordered__aside-item
+						p.heading-8 Phone
+						.unit.unit-horizontal.unit-spacing-xxs
+							.unit__left: span.novi-icon.icon.icon-sm.icon-primary.material-icons-local_phone
+							.unit__body
+								ul.contact-list
+									li: a(href='tel:#') 1-800-1234-567
+
+					.layout-bordered__aside-item
+						p.heading-8 E-mail
+						.unit.unit-horizontal.unit-spacing-xxs
+							.unit__left: span.novi-icon.icon.icon-sm.icon-primary.mdi.mdi-email-outline
+							.unit__body
+								ul.contact-list
+									li: a(href='mailto:#') info@demolink.org
+
+					.layout-bordered__aside-item
+						p.heading-8 Address
+						.unit.unit-horizontal.unit-spacing-xxs
+							.unit__left: span.novi-icon.icon.icon-sm.icon-primary.material-icons-location_on
+							.unit__body
+								ul.contact-list
+									li: a(href='#') 6036 Richmond hwy., #[br] Alexandria, VA, 2230
+
+	="\n"
+
+	section.section.section-xs.bg-gray-1.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Contact form dark
+
+	// Get in Touch
+	section.section.section-lg.bg-gray-dark.novi-background.bg-cover
+		.shell
+			.layout-bordered
+				.layout-bordered__main.text-center
+					.layout-bordered__main-inner
+						h3 Get in Touch
+						p We are available 24/7 by fax, e-mail or by phone. You can also use our quick contact form to ask a question about our services and projects.
+
+						// RD Mailform
+						form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+							.range.range-fix.range-sm-bottom.range-20
+								.cell-sm-6
+									.form-wrap
+										input#contact-first-name-2.form-input(type="text" name="first-name" data-constraints='@Required')
+										label.form-label(for="contact-first-name-2") First name
+
+								.cell-sm-6
+									.form-wrap
+										input#contact-phone-2.form-input(type="text" name="phone" data-constraints='@Numeric @Required')
+										label.form-label(for="contact-phone-2") Phone
+
+								.cell-xs-12
+									.form-wrap
+										label.form-label(for="contact-message-3") Your Message
+										textarea#contact-message-3.form-input(name="message" data-constraints="@Required")
+
+								.cell-sm-6
+									.form-wrap
+										input#contact-email-4.form-input(type="email" name="email" data-constraints="@Email @Required")
+										label.form-label(for="contact-email-4") E-mail
+
+								.cell-sm-6
+									button(type="submit").button.button-block.button-primary Send Message
+
+				.layout-bordered__aside
+					.layout-bordered__aside-item
+						p.heading-8 Get social
+						ul.list-inline-xs
+							li: a.icon.novi-icon.icon-middle.icon-sm.icon-default.fa.fa-facebook(href='#')
+							li: a.icon.novi-icon.icon-middle.icon-sm.icon-default.fa.fa-twitter(href='#')
+							li: a.icon.novi-icon.icon-middle.icon-sm.icon-default.fa.fa-google(href='#')
+							li: a.icon.novi-icon.icon-middle.icon-sm.icon-default.fa.fa-youtube(href='#')
+
+					.layout-bordered__aside-item
+						p.heading-8 Phone
+						.unit.unit-horizontal.unit-spacing-xxs
+							.unit__left: span.novi-icon.icon.icon-sm.icon-primary.material-icons-local_phone
+							.unit__body
+								ul.contact-list
+									li: a(href='tel:#') 1-800-1234-567
+
+					.layout-bordered__aside-item
+						p.heading-8 E-mail
+						.unit.unit-horizontal.unit-spacing-xxs
+							.unit__left: span.novi-icon.icon.icon-sm.icon-primary.mdi.mdi-email-outline
+							.unit__body
+								ul.contact-list
+									li: a(href='mailto:#') info@demolink.org
+
+					.layout-bordered__aside-item
+						p.heading-8 Address
+						.unit.unit-horizontal.unit-spacing-xxs
+							.unit__left: span.novi-icon.icon.icon-sm.icon-primary.material-icons-location_on
+							.unit__body
+								ul.contact-list
+									li: a(href='#') 6036 Richmond hwy., #[br] Alexandria, VA, 2230
+
+	="\n"
+
+	// Page Footer
+	include ../sections/_footer-corporate
+
+
+

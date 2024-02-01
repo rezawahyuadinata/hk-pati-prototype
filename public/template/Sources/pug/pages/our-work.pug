@@ -1,0 +1,106 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-thumb-zoe
+
+block variables
+  - var activeIndex = 3
+  - var pageName = 'Our Work'
+
+block page
+  // Page Header
+  include ../sections/_header-fullwidth
+
+  +breadcrumbs({
+    bgImage: 'bg-image-9',
+    path: [[pageName]]
+  })
+
+  // Our Projects
+  section.section.section-md.bg-white.novi-background.bg-cover
+    .shell-fluid
+      .row.range-40
+        // Isotope Filters
+        .col-lg-12
+          .shell
+            // Section Header
+            .section__header.section__header_wide
+              h4 Our Works
+              .isotope-filters.isotope-filters-horizontal
+                button.isotope-filters-toggle.button.button-sm.button-primary(data-custom-toggle='#isotope-filters', data-custom-toggle-disable-on-blur="true") Filter
+                  span.caret
+                ul.isotope-filters-list#isotope-filters
+                  li
+                    a.active(data-isotope-filter='*', data-isotope-group='gallery', href='#') All
+                  li
+                    a(data-isotope-filter='Commercials', data-isotope-group='gallery', href='#') Commercials
+                  li
+                    a(data-isotope-filter='Branding', data-isotope-group='gallery', href='#') Branding
+                  li
+                    a(data-isotope-filter='Digital advertising', data-isotope-group='gallery', href='#') Digital advertising
+                  li
+                    a(data-isotope-filter='Printed Ads', data-isotope-group='gallery', href='#') Printed Ads
+
+        // Isotope Content
+        .col-lg-12
+          .isotope.isotope-1(data-isotope-layout='masonry', data-isotope-group='gallery', data-column-class=".isotope-item-etalon")
+            .row.row-no-gutter
+              .col-xs-6.col-md-4.isotope-item(data-filter='Commercials')
+                +thumb-zoe({
+                  img: 'project-1-639x524',
+                  title: 'New Office Co.'
+                })
+              .col-xs-6.col-md-2.isotope-item.isotope-item-etalon(data-filter='Digital advertising')
+                +thumb-zoe({
+                  img: 'project-2-320x262',
+                  title: '2K Stationery'
+                })
+              .col-xs-6.col-md-2.isotope-item(data-filter='Commercials')
+                +thumb-zoe({
+                  img: 'project-4-320x524',
+                  title: 'iStep'
+                })
+              .col-xs-6.col-md-4.isotope-item(data-filter='Branding')
+                +thumb-zoe({
+                  img: 'project-3-640x524',
+                  title: 'PaperWorks Ltd.'
+                })
+              .col-xs-6.col-md-2.isotope-item(data-filter='Digital advertising')
+                +thumb-zoe({
+                  img: 'project-5-320x262',
+                  title: 'BTS Corp.'
+                })
+              .col-xs-6.col-md-2.isotope-item(data-filter='Digital advertising')
+                +thumb-zoe({
+                  img: 'project-7-320x524',
+                  title: 'Greenery Ltd.'
+                })
+              .col-xs-6.col-md-4.isotope-item(data-filter='Branding')
+                +thumb-zoe({
+                  img: 'project-8-639x524',
+                  title: 'Laserworx'
+                })
+              .col-xs-6.col-md-2.isotope-item(data-filter='Printed Ads')
+                +thumb-zoe({
+                  img: 'project-9-320x262',
+                  title: 'MAX Computing'
+                })
+              .col-xs-6.col-md-4.isotope-item(data-filter='Commercials')
+                +thumb-zoe({
+                  img: 'project-10-640x524',
+                  title: 'Razor Publishing'
+                })
+              .col-xs-6.col-md-2.isotope-item(data-filter='Printed Ads')
+                +thumb-zoe({
+                  img: 'project-11-320x262',
+                  title: 'Rolx Accessories'
+                })
+  ="\n"
+
+
+
+  // Page Footer
+  include ../sections/_footer-corporate
+
+
+

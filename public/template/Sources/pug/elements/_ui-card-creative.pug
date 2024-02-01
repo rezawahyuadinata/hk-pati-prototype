@@ -1,0 +1,12 @@
+mixin card-creative(obj)
+  // Card creative
+  article.card-creative.novi-background.bg-cover
+    .card-creative__header
+      +jpg(obj.img)
+    
+    .card-creative__main(data-fixed-height='')
+      p.card-creative__title=obj.title 
+      p.card-creative__subtitle=obj.subtitle
+
+      .card-creative__element
+        a(href='mailto:' + (obj.link ? obj.link : '#'))=obj.link ? obj.link : 'info@demolink.org'

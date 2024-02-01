@@ -1,0 +1,13 @@
+mixin quote-modern(obj)
+  // Quote modern
+  article.quote-modern
+    .quote-modern__header
+      .quote-modern__image-wrap
+        +jpg(obj.img, 'quote-modern__image')
+      
+    .quote-modern__main
+      p.q=obj.text
+      
+    .quote-modern__footer
+      small=obj.small
+      p.cite=obj.cite

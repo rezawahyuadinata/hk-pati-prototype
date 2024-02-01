@@ -1,0 +1,167 @@
+//-
+//- Common usage mixins
+//- --------------------------------------------------
+  
+-
+  function nameToLink(name) {
+    try { return name.trim().replace(/\s/g, '-').toLowerCase() + '.html'; }
+    catch ( error ) { 
+      throw new Error('Error in function nameToLink:\n' + error);
+    } 
+  }
+  
+  function getImageSize(name) {
+    try { return name.match('[0-9]+(x)[0-9]+')[0].split('x'); }
+    catch ( error ) { 
+      throw new Error('Error in function getImageSize:\n' + error);
+    } 
+  }
+  
+
+//- Img image
+mixin img(name, className)
+  - var size = getImageSize(name);
+  - var ext = name.split('.')[1];
+
+  img(src='images/' + name, alt='', width=size[0], height=size[1], class=className)
+
+//- Jpg image
+mixin jpg(name, className)
+  - var size = getImageSize(name);
+  img(src='images/' + name + '.jpg', alt='', width=size[0], height=size[1], class=className)
+
+//- Png image
+mixin png(name, className)
+  - var size = getImageSize(name);
+  img(src='images/' + name + '.png', alt='', width=size[0], height=size[1], class=className)
+ 
+  
+mixin parallax-section(obj)
+  section.section.parallax-container(class = obj.bgClass ? obj.bgClass : 'bg-gray-dark', data-parallax-img=src='images/' + obj.parallaxImage + '.jpg')
+    .parallax-content(class =obj.contentClass)
+      block
+  ="\n"
+
+mixin breadcrumbs(obj)
+  - var activeItemName= obj.path.pop()[0];
+  // Breadcrumbs
+  section.breadcrumbs-custom.bg-image.novi-background.bg-cover(style='background-image: url(images/' +( obj.bgImage ? obj.bgImage : 'bg-image-1') + '.jpg);')
+    .shell
+      h2.breadcrumbs-custom__title=activeItemName
+
+      ul.breadcrumbs-custom__path
+        li: a(href='index.html')=mainMenu[0].title
+
+        - for (var i = 0; i < obj.path.length; i++) 
+          - if (obj.path[i][0] == activeItemName) break;
+          - var pathLink = obj.path[i][1] ? obj.path[i][1] : nameToLink(obj.path[i][0])
+          li: a(href=pathLink)=obj.path[i][0]
+
+        li.active=activeItemName
+  ="\n"
+
+mixin breadcrumbs-parallax(obj)
+  - var activeItemName= obj.path.pop()[0];
+  // Breadcrumbs
+  section.breadcrumbs-custom.parallax-container(data-parallax-img=src='images/' + obj.parallaxImage + '.jpg', alt='')
+    .shell
+      h2.breadcrumbs-custom__title=activeItemName
+
+      ul.breadcrumbs-custom__path
+        li: a(href='index.html')=mainMenu[0].title
+
+        - for (var i = 0; i < obj.path.length; i++)
+        - if (obj.path[i][0] == activeItemName) break;
+        - var pathLink = obj.path[i][1] ? obj.path[i][1] : nameToLink(obj.path[i][0])
+        li: a(href=pathLink)=obj.path[i][0]
+
+        li.active=activeItemName
+  ="\n"
+
+mixin page-title(obj)
+  // Page title 
+  section.section.section-md.bg-white.text-center
+    .shell
+      .range.range-50.range-sm-center
+        .cell-sm-9.cell-md-8.cell-lg-6
+          h3=obj.title
+          p=obj.text
+          
+      block
+  ="\n"
+
+mixin equalLink(name)
+  a(href=nameToLink(name))=name
+  
+//- Pagination
+mixin pagination(modClass)
+  // Pagination
+  ul.pagination-custom(class=modClass)
+    li.pagination-control: a(href='#') Prev
+    li: a(href='#') 1
+    li: a(href='#') 2
+    li.active: a(href='#') 3
+    li: a(href='#') 4
+    li.pagination-control: a(href='#') Next
+  
+mixin quote-mark(objClass)
+  div(class=objClass)
+    svg(version='1.1', xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='32px', height='27px', viewbox='221.541 224.041 32 27')
+      g
+        path(d='M242.463,251.041h7.385c1.026,0,1.898-0.358,2.616-1.074c0.718-0.716,1.077-1.585,1.077-2.608v-7.364\
+        c0-1.023-0.359-1.892-1.077-2.608c-0.718-0.716-1.59-1.074-2.616-1.074h-4.308c-0.513,0-0.949-0.179-1.308-0.537\
+        c-0.359-0.358-0.538-0.793-0.538-1.304v-0.613c0-1.355,0.481-2.512,1.442-3.471c0.962-0.959,2.122-1.438,3.481-1.438h1.231\
+        c0.334,0,0.622-0.122,0.866-0.365c0.243-0.243,0.365-0.53,0.365-0.863v-2.455c0-0.332-0.122-0.62-0.365-0.863\
+        c-0.244-0.243-0.532-0.365-0.866-0.365h-1.231c-1.333,0-2.606,0.259-3.818,0.777c-1.212,0.518-2.26,1.218-3.144,2.1\
+        c-0.884,0.882-1.586,1.927-2.106,3.135c-0.519,1.208-0.779,2.477-0.779,3.806v13.5c0,1.023,0.359,1.892,1.077,2.608\
+        S241.438,251.041,242.463,251.041z')
+        path(d='M222.618,249.967c0.718,0.716,1.59,1.074,2.615,1.074h7.384c1.026,0,1.898-0.358,2.615-1.074\
+        c0.718-0.716,1.077-1.585,1.077-2.608v-7.364c0-1.023-0.359-1.892-1.077-2.608c-0.718-0.716-1.59-1.074-2.615-1.074h-4.308\
+        c-0.513,0-0.949-0.179-1.308-0.537c-0.359-0.358-0.538-0.793-0.538-1.304v-0.613c0-1.355,0.481-2.512,1.443-3.471\
+        c0.961-0.959,2.121-1.438,3.481-1.438h1.231c0.333,0,0.622-0.122,0.865-0.365c0.244-0.243,0.366-0.53,0.366-0.863v-2.455\
+        c0-0.332-0.122-0.62-0.366-0.863c-0.243-0.243-0.532-0.365-0.865-0.365h-1.231c-1.333,0-2.606,0.259-3.817,0.777\
+        c-1.211,0.518-2.259,1.218-3.144,2.1c-0.885,0.882-1.587,1.927-2.106,3.135c-0.519,1.208-0.779,2.477-0.779,3.806v13.5\
+        C221.541,248.382,221.899,249.251,222.618,249.967z')
+        
+//- Table
+mixin table(classes, modClasses)
+  .table-custom-responsive(class=modClasses)
+    table.table-custom(class=classes)
+      thead
+        tr
+          th Column 1
+          th Column 2
+          th Column 3
+          th Column 4
+
+      tbody
+        tr
+          td Item #1
+          td Description
+          td Subtotal
+          td $3.00
+        tr
+          td Item #2
+          td Description
+          td Discount
+          td $3.00
+        tr
+          td Item #3
+          td Description
+          td Shipping
+          td $3.00
+
+        tr
+          td Item #4
+          td Description
+          td Tax
+          td $4.00
+
+      tfoot
+        tr
+          td All Items
+          td Description
+          td Your Total
+          td $13.00
+          
+          

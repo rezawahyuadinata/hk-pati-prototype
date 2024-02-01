@@ -1,0 +1,8 @@
+To import a project into Novi Builder:
+
+1) Open the main menu in Novi Builder
+2) Select "Import"
+3) Select "Project Import"
+4) Choose your project archive file.
+
+For more details please visit https://novibuilder.com/documentation/pages/features.html#import

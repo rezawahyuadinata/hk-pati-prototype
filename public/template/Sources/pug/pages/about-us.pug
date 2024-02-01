@@ -1,0 +1,126 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-card-creative
+  
+block variables
+  - var activeIndex = 1
+  - var pageName = 'About Us'
+
+block page
+  include ../sections/_header-fullwidth
+
+  +breadcrumbs({
+    bgImage: 'bg-image-1',
+    path: [[pageName]]
+  })
+
+  include ../sections/_section-about-us
+
+  // Our History 
+  +parallax-section({
+    parallaxImage: 'parallax-2'
+  })
+    .section-md.text-center
+      .shell
+        h2 Our History
+        
+        .timeline 
+          .timeline__item-wrap
+            // Timeline item
+            article.timeline__item
+              .timeline__item-header: h5 Beginning,2006
+              .timeline__item-main
+                +jpg('about-4-93x86')
+                p We started to offer American companies top-notch marketing services.
+                 
+          .timeline__item-wrap
+            // Timeline item
+            article.timeline__item.timeline__item-reverse
+              .timeline__item-header: h5 Customer service,2008
+              .timeline__item-main
+                +jpg('about-5-93x86')
+                p We improved the level of customer service at all offices of our agency.
+                
+          .timeline__item-wrap
+            // Timeline item
+            article.timeline__item
+              .timeline__item-header: h5 Industry Leader,2016
+              .timeline__item-main
+                +jpg('about-6-93x86')
+                p In 2016, we were recognized as the advertising industry leader.
+  ="\n"
+
+  // Social Responsibility & Eco Standards
+  section.section.section-sm.bg-white.novi-background.bg-cover
+    .shell
+      .range.range-50.range-sm-center.range-md-left.range-lg-justify
+        .cell-sm-10.cell-md-6
+          h4 Our Targets
+          p We define oursleves as the company working for the good of our clients. Our main targets are international companies as well as small/medium businesses, and private entrepreneurs.
+          
+          .group-3-columns(data-lightgallery='group')
+            .column-item: a.thumb-elegant(href='images/image-1-1200x800_original.jpg', data-lightgallery='item')
+              +jpg('image-1-166x139')
+              .thumb-elegant__overlay
+            .column-item: a.thumb-elegant(href='images/image-2-1200x800_original.jpg', data-lightgallery='item')
+              +jpg('image-2-166x139')
+              .thumb-elegant__overlay
+            .column-item: a.thumb-elegant(href='images/image-3-1200x800_original.jpg', data-lightgallery='item')
+              +jpg('image-3-166x139')
+              .thumb-elegant__overlay
+          
+        .cell-sm-10.cell-md-6.cell-lg-5
+          h4 Our Certificates
+          p Here are the certificates that acknowledge the high level of our advertising and marketing services.
+          .group-3-columns(style='max-width: 430px;' data-lightgallery='group') 
+            .column-item: a.thumb-light(href='images/certificate-1-847x1200.jpg', data-lightgallery='item')
+              +jpg('certificate-1-120x171')
+              .thumb-light__overlay
+            .column-item: a.thumb-light(href='images/certificate-1-847x1200.jpg', data-lightgallery='item')
+              +jpg('certificate-1-120x171')
+              .thumb-light__overlay
+            .column-item: a.thumb-light(href='images/certificate-1-847x1200.jpg', data-lightgallery='item')
+              +jpg('certificate-1-120x171')
+              .thumb-light__overlay
+  ="\n"
+  
+  // Top Management
+  +parallax-section({
+    parallaxImage: 'parallax-4'
+  })
+    .section-md
+      .shell
+        // Section Header
+        .section__header
+          h4 Top Management
+          .section__header-element
+            a.link.link-arrow(href='contacts.html'): span Contact Us
+
+        .range.range-30
+          .cell-sm-6.cell-md-4
+            +card-creative({
+              img: 'team-1-115x119',
+              title: 'Sam Wilson',
+              subtitle: 'Founder, CEO'
+            })
+
+          .cell-sm-6.cell-md-4
+            +card-creative({
+              img: 'team-2-115x119',
+              title: 'Jeffrey Neddery',
+              subtitle: 'Business Development Manager'
+            })
+
+          .cell-sm-6.cell-md-4
+            +card-creative({
+              img: 'team-3-115x119',
+              title: 'Peter Wilson',
+              subtitle: 'Project Manager'
+            })
+  ="\n"
+
+
+  // Page Footer
+  include ../sections/_footer-corporate
+

@@ -1,0 +1,96 @@
+-
+  var
+    brandName = 'Randver',
+    logoDefault = 'logo-270x94', //logo-tf-186x47
+    logoDefaultInverse = 'logo-inverse-270x94',
+    postLink = 'single-post.html',
+    videoLink = '//www.youtube.com/v/=I_Q9qi7jST8',
+    videoLinkVimeo = '//vimeo.com/108425305',
+    livedemo = false,
+    menu1 = [
+      {
+        title: 'Home',
+        link: 'index.html'
+          },
+            { title: 'About Us' },
+            { title: 'Services' },
+            { title: 'Our Work' },
+            { title: 'News',
+              dropdown: [
+                { title: 'Single post' }
+              ]
+          },
+            { title: 'Contacts' },
+          {
+            title: 'Pages',
+            link: '#',
+            dropdown: [
+              { title: '404 page' },
+              { title: 'Search results' },
+              { title: 'Privacy policy' }
+          ]
+        },
+      {
+        title: 'Elements',
+        link: '#',
+        megamenu: [
+          {
+          title: 'Elements 1',
+          list: [
+            { title: 'Breadcrumbs' },
+            { title: 'Clients' },
+            { title: 'Counters' },
+            { title: 'Footers' },
+            { title: 'Forms' }
+          ]
+          },
+          {
+          title: 'Elements 2',
+          list: [
+            { title: 'Gallery' },
+            { title: 'Gallery album' },
+            { title: 'Headers' },
+            { title: 'Map' },
+            { title: 'Pricing page' }
+          ]
+          },
+          {
+          title: 'Elements 3',
+          list: [
+            { title: 'Projects' },
+            { title: 'Sliders' },
+            { title: 'Subscribe forms' },
+            { title: 'Team page' },
+            { title: 'Testimonials' },
+            { title: 'Timeline' }
+          ]
+          }
+        ]
+      }
+    ],
+    menu2 = [
+      {
+        title: 'Home',
+        link: 'index.html'
+      },
+      { title: 'About Us' },
+      { title: 'Services' },
+      { title: 'Our Work' },
+      { title: 'News',
+        dropdown: [
+          { title: 'Single post' }
+        ]
+      },
+      { title: 'Contacts' },
+      {
+        title: 'Pages',
+        link: '#',
+        dropdown: [
+          { title: '404 page' },
+          { title: 'Search results' },
+          { title: 'Privacy policy' }
+        ]
+      }
+    ],
+    mainMenu = livedemo ? menu1 : menu2,
+    builderLink = 'http://ld-wp2.template-help.com/novi-builder/prod-17434/'

@@ -1,0 +1,125 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_pricing
+
+block variables
+	- var activeIndex = 7
+	- var pageName = 'Pricing'
+
+
+block page
+	// Page Header
+	include ../sections/_header-fullwidth
+
+	section.breadcrumbs-custom.parallax-container(data-parallax-img=src = 'images/bg-image-11.jpg')
+		.parallax-content
+			.shell
+				h2.breadcrumbs-custom__title Pricing
+
+				ul.breadcrumbs-custom__path
+					li: a(href='index.html') Home
+					li: a(href='#') Elements
+					li.active Pricing
+
+	section.section.section-xs.bg-gray-1.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Pricing 1
+
+	// Pricing
+	section.section.section-md.bg-white
+		.shell
+			.range.range-30
+				.cell-sm-6.cell-md-4.cell-flex
+					+pricing-1({
+						title: 'Media Buying',
+						content: 'Randver does media buying across a majority of modern information mediums.Newspapers, Printed Billboards, TV ad spots, Radio commercials, you just name it! Regardless of a budget, we\'ll book you up!',
+						link: '#'
+					})
+
+				.cell-sm-6.cell-md-4.cell-flex
+					+pricing-1({
+						title: 'Creative Advertising',
+						content: 'Creating content, an image and the big idea for your next advertising campaign is perhaps nothing less, than an artform. Instead of Mona Lisa, thanks to us the next world \'s darling will be your brand!',
+						link: '#'
+					})
+
+				.cell-sm-6.cell-md-4.cell-flex
+					+pricing-1({
+						title: 'Digital',
+						content: 'Using the new media in a successful way is all about crafting a generates leads and sales for your company.We understand all aspects of online marketing: websites, search, social and e-commerce.',
+						link: '#'
+					})
+	="\n"
+
+	section.section.section-xs.bg-white.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Pricing 2
+
+	// Pricing
+	section.section.section-md.bg-gray-1
+		.shell
+			.range.range-30
+				.cell-sm-6.cell-md-4.cell-flex
+					+pricing-2({
+						title: 'Radio Advert',
+						price: '4000',
+						content: 'We will be able to coordinate a breakthrough radio advertising, aimed at your target audience!',
+						link: '#'
+					})
+
+				.cell-sm-6.cell-md-4.cell-flex
+					+pricing-2({
+						title: 'TV Advert',
+						titleClass: 'title-dark',
+						price: '7000',
+						content: 'With dozens of those created by our team, your TV spot will shine with us!',
+						link: '#'
+					})
+
+				.cell-sm-6.cell-md-4.cell-flex
+					+pricing-2({
+						title: 'Digital Video Advert',
+						price: '9000',
+						content: 'Digital media are native to our team, which means we will be efficient in them!',
+						link: '#'
+					})
+
+	section.section.section-xs.bg-white.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Pricing 3
+
+	// Pricing
+	section.section.section-md.bg-gray-1
+		.shell
+			.range.range-30
+				.cell-sm-6.cell-md-4.cell-flex
+					+pricing-3({
+						title: 'Radio Advert',
+						price: '4000',
+						content: 'We will be able to coordinate a breakthrough radio advertising, aimed at your target audience!',
+						link: '#'
+					})
+
+				.cell-sm-6.cell-md-4.cell-flex
+					+pricing-3({
+						title: 'TV Advert',
+						titleClass: 'title-dark',
+						price: '7000',
+						content: 'With dozens of those created by our team, your TV spot will shine with us!',
+						link: '#'
+					})
+
+				.cell-sm-6.cell-md-4.cell-flex
+					+pricing-3({
+						title: 'Digital Video Advert',
+						price: '9000',
+						content: 'Digital media are native to our team, which means we will be efficient in them!',
+						link: '#'
+					})
+
+	// Page Footer
+	include ../sections/_footer-corporate
+
+
+

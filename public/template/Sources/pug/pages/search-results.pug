@@ -1,0 +1,31 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 6
+  - var pageName = "Search results"
+
+block page
+  // Page Header
+  include ../sections/_header-fullwidth
+
+  +breadcrumbs({
+    bgImage: 'bg-image-5',
+    path: [[mainMenu[activeIndex].title, mainMenu[activeIndex].link], [pageName]]
+  })
+    
+  // Search results 
+  section.section.section-md.bg-white.novi-background.bg-cover
+    .shell
+      // RD Search
+      form.rd-search.rd-search_md.rd-search_classic(action="search-results.html" method="GET")
+        .form-wrap
+          input.form-input(id="search-results-search" type="text" name="s" autocomplete="off")
+          label.form-label(for='search-results-search') Search...
+        button.rd-search-submit(type='submit')
+
+      .rd-search-results
+        
+  ="\n" 
+
+  // Page Footer
+  include ../sections/_footer-corporate

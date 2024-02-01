@@ -1,0 +1,10 @@
+mixin thumbnail-small(obj)
+  - var imageSize = getImageSize(obj.filename)
+  a.thumbnail-small(href=obj.link)
+    .thumbnail-small-image
+      img(src='images/layout-panel/' + obj.filename + '.jpg' alt='' width=imageSize[0] height=imageSize[1])
+    .thumbnail-small-hover-image
+      img(src='images/layout-panel/' + obj.filename + '.jpg' alt='' width=imageSize[0] height=imageSize[1])
+
+    .thumbnail-small-caption
+      p.thumbnail-small-header=obj.title

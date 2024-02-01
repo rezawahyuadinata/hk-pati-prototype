@@ -1,0 +1,164 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-comment
+include ../elements/_thumbnail-classic
+
+block variables
+	- var activeIndex = 4
+	- var pageName = 'Single post'
+
+block page
+	// Page Header
+	include ../sections/_header-fullwidth
+
+	+breadcrumbs({
+		bgImage: 'bg-image-9',
+		path: [[mainMenu[activeIndex].title], [pageName]]
+	})
+
+	// Single post
+	section.section.section-md.bg-white.novi-background.bg-cover
+		.shell.blog
+			.range.range-fix.range-90
+				.cell-md-8.cell-lg-9.blog__main
+					article.post-single
+						+jpg('post-4-870x412', 'post-single__image')
+
+						h4.post-single__title Email Newsletters Hit a Speed Bump: Inaccurate Open Rates
+
+						ul.post-single__meta
+							li: dl
+								dt Date
+								dd: time(datetime='2018-01-22') January 22, 2018
+							li: dl
+								dt Posted by
+								dd Amelia Condon
+							li: dl
+								dt Category
+								dd Digital
+						.post-single__main
+							p As Clover Letter Emails Got Bigger in size, Founders Say, Its Open Rate Collapsed… Email newsletters are just as effective when working with existing customers, as they were from the very start.  Also, the part of the problem may be the “offline reading” option, used by many people worldwide.
+							p But another newsletter flagged an unexpected challenge last week, one that caused its founders to re-evaluate their primary method of distribution and introduce an app to complement it. Liza Darwin and Casey Lewis, who started Clover Letter in February for teen girls, wrote that their strong start was running into a problem.
+
+							// Quote minimal
+							article.quote-minimal
+								p.q Spam filters used by providers can prevent readers from getting their newsletters, which may influence their open rate.
+
+							p As they got more comfortable with MailChimp, the service they used to manage and send Clover Letter, they said they began adding GIFs and Instagrams and other things that made the experience feel that much more exciting than your average promotional letter in the box. But that actually led to the problem of increased letter size, which certainlyserves as a huge disadvantage for many clients of Clover Letter. Their founders are now looking for various methods of solving this problem.
+
+						.post-single__footer
+							p.heading-5 Share this Post:
+							.group-sm
+								a.button.button-xs.button-facebook.button-icon.button-icon-left(href='#')
+									span.novi-icon.icon.fa.fa-facebook
+									| Like
+								a.button.button-xs.button-twitter.button-icon.button-icon-left(href='#')
+									span.novi-icon.icon.fa.fa-twitter
+									| Tweet
+								a.button.button-xs.button-google.button-icon.button-icon-left(href='#')
+									span.novi-icon.icon.fa.fa-google-plus
+									| Share
+
+
+
+				.cell-md-4.cell-lg-3.blog__aside
+					.blog-aside__column
+						.blog__aside-item
+							p.heading-8.blog-title Categories
+							ul.list-marked-bordered
+								li: a(href='#')
+									span Digital/SMM
+									span.count (4)
+								li: a(href='#')
+									span Brand Marketing
+									span.count (2)
+								li: a(href='#')
+									span Media Buying
+									span.count (6)
+
+						.blog__aside-item
+							p.heading-8.blog-title Popular posts
+							.post-inline-wrap
+								// Post inline
+								article.post-inline
+									.post-inline__main
+										p.post-inline__title: a(href=postLink) How We Measure the Vlogs' Ad Potential
+									.post-inline__footer
+										p.post-inline__time 13 April 2018
+
+								// Post inline
+								article.post-inline
+									.post-inline__main
+										p.post-inline__title: a(href=postLink) Digital Marketing Metrics That Really Matter Nowadays
+									.post-inline__footer
+										p.post-inline__time 25 January 2018
+
+						.blog__aside-item
+							p.heading-8.blog-title
+								span Promo
+								span.tag-inline
+									svg(version='1.1', xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='51px', height='23px', viewbox='0 0 51 23.011', preserveAspectRatio='none'): polygon(points='7,0.006 7,0 0,11.505 7,23.011 7,23.006 51,23.006 51,0.006 ')
+									span New
+
+							a.box-promo(href='#')
+								+jpg('promo-1-236x321')
+
+								.box-promo__content
+									h5 Recommendations to Manage Your Campaign
+
+					.blog-aside__column
+						.blog__aside-item
+							p.heading-8.blog-title
+								span Gallery
+							.range.range-xs.range-10.max-330(data-lightgallery='group')
+								.cell-4.cell-xs-4
+									+thumbnail-classic({
+										modClass: 'thumbnail-classic-xs',
+										img: 'single-post-01-92x92',
+										imgOriginal: 'single-post-01-1200x800'
+									})
+
+								.cell-4.cell-xs-4
+									+thumbnail-classic({
+										modClass: 'thumbnail-classic-xs',
+										img: 'single-post-02-92x92',
+										imgOriginal: 'single-post-02-1200x883'
+									})
+
+								.cell-4.cell-xs-4
+									+thumbnail-classic({
+										modClass: 'thumbnail-classic-xs',
+										img: 'single-post-03-92x92',
+										imgOriginal: 'single-post-03-1200x803'
+									})
+
+								.cell-4.cell-xs-4
+									+thumbnail-classic({
+										modClass: 'thumbnail-classic-xs',
+										img: 'single-post-04-92x92',
+										imgOriginal: 'single-post-04-1200x1264'
+									})
+
+								.cell-4.cell-xs-4
+									+thumbnail-classic({
+										modClass: 'thumbnail-classic-xs',
+										img: 'single-post-05-92x92',
+										imgOriginal: 'single-post-05-1200x801'
+									})
+
+								.cell-4.cell-xs-4
+									+thumbnail-classic({
+										modClass: 'thumbnail-classic-xs',
+										img: 'single-post-06-92x92',
+										imgOriginal: 'single-post-06-1200x800'
+									})
+
+
+	="\n"
+
+	// Page Footer
+	include ../sections/_footer-corporate
+
+
+

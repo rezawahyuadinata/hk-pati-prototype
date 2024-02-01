@@ -1,0 +1,374 @@
+//
+// Buttons
+// --------------------------------------------------
+
+$sizing-xs: 6px, 25px;
+$sizing-sm: 9px, 28px;
+$sizing-md: 10px, 40px;
+$sizing-lg: 17px, 65px;
+$sizing-xl: 25px, 70px;
+
+$button-border-size: 3px;
+$button-border-radius: 0;
+
+// Button General Styles
+.button {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  @include btn-size(nth($sizing-md, 1), nth($sizing-md, 2), $btn-font-size, 24px, 0);
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  transition: .33s all ease;
+  border: $button-border-size solid;
+  border-radius: $button-border-radius;
+  letter-spacing: .1em;
+  white-space: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+}
+
+* + .button {
+  margin-top: 20px;
+}
+
+// Large ≥992px
+@media (min-width: $screen-md-min){
+  * + .button {
+    margin-top: 35px;
+  }
+}
+
+// Appearance style
+// --------------------------------------------------
+
+%button-effect-ujarak {
+  position: relative;
+  z-index: 0;
+  transition: background 0.4s, border-color 0.4s, color 0.4s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $primary;
+    z-index: -1;
+    opacity: 0;
+    transform: scale3d(0.7, 1, 1);
+    transition: transform 0.4s, opacity 0.4s;
+    border-radius: inherit;
+  }
+
+  &,
+  &::before {
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    }
+  }
+}
+
+@mixin btn-variant-ujarak($clr, $bg, $bd, $clr-hover, $bg-hover, $bd-hover) {
+  @extend %button-effect-ujarak;
+
+  &,
+  &:focus,
+  &:active {
+    color: $clr;
+    background-color: $bg;
+    border-color: $bd;
+  }
+
+  &:hover {
+    color: $clr-hover;
+    border-color: $bd-hover;
+  }
+
+  &::before {
+    background: $bg-hover;
+  }
+}
+
+%button-borderless {
+  border: 0;
+  @include btn-size-responsive(nth($sizing-md, 1) + $button-border-size, nth($sizing-md, 2) + $button-border-size);
+
+  &.button-xs {
+    @include btn-size-responsive(nth($sizing-xs, 1) + $button-border-size, nth($sizing-xs, 2) + $button-border-size);
+  }
+
+  &.button-sm {
+    @include btn-size-responsive(nth($sizing-sm, 1) + $button-border-size, nth($sizing-sm, 2) + $button-border-size);
+  }
+
+  &.button-lg {
+    @include btn-size-responsive(nth($sizing-lg, 1) + $button-border-size, nth($sizing-lg, 2) + $button-border-size);
+  }
+
+  &.button-xl {
+    @include btn-size-responsive(nth($sizing-xl, 1) + $button-border-size, nth($sizing-xl, 2) + $button-border-size);
+  }
+}
+
+.button-default {
+  @include btn-variant($white, $gray, $gray, $white, $primary, $primary);
+}
+
+.button-primary {
+  @extend %button-borderless;
+  @include btn-variant-ujarak($gray-base, $primary, $primary, $white, $gray-base, $gray-base);
+}
+
+.button-secondary {
+  @extend %button-borderless;
+  @include btn-variant-ujarak($white, $secondary, $secondary, $white, $gray-dark, $gray-dark);
+}
+
+.button-darker {
+  @extend %button-borderless;
+  @include btn-variant-ujarak($white, $gray-base, $gray-base, $gray-base, $primary, $primary);
+}
+
+.button-gray-2 {
+  @extend %button-borderless;
+  @include btn-variant-ujarak($gray-darker, $gray-2, $gray-2, $white, $primary, $primary);
+}
+
+.button-lighter {
+  @extend %button-borderless;
+  @include btn-variant-ujarak($white, $gray-base, $gray-base, $gray-base, $primary, $primary);
+}
+
+.button-default-outline {
+  @include btn-variant-ujarak($gray-darker, transparent, $gray-2, $gray-base, $primary, $primary);
+}
+
+.button-dark-outline {
+  @include btn-variant-ujarak($gray-dark, transparent, $gray-dark, $gray-dark, $primary, $primary);
+}
+
+.button-facebook {
+  &,
+  &:active,
+  &:focus {
+    color: $white;
+    background: $facebook;
+    border-color: $facebook;
+  }
+
+  &:hover {
+    color: $white;
+    background: darken($facebook, 11%);
+    border-color: darken($facebook, 11%);
+  }
+}
+
+.button-twitter {
+  &,
+  &:active,
+  &:focus {
+    color: $white;
+    background: $twitter;
+    border-color: $twitter;
+  }
+
+  &:hover {
+    color: $white;
+    background: darken($twitter, 11%);
+    border-color: darken($twitter, 11%);
+  }
+}
+
+.button-google {
+  &,
+  &:active,
+  &:focus {
+    color: $white;
+    background: $google;
+    border-color: $google;
+  }
+
+  &:hover {
+    color: $white;
+    background: darken($google, 11%);
+    border-color: darken($google, 11%);
+  }
+}
+
+.button-ghost {
+  color: $gray-darker;
+  background-color: transparent;
+}
+
+// Btn with shadow
+.button-shadow {
+  box-shadow: 0 9px 21px 0 rgba($gray-dark, 0.15);
+  border: 0;
+
+  &:hover {
+    background: $gray-4;
+    box-shadow: 0 9px 10px 0 rgba($gray-dark, 0.12);
+  }
+
+  &:active {
+    box-shadow: 0 9px 21px 0 rgba($gray-base, 0.07);
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.button-xs {
+  font-weight: 700;
+  @include btn-size(nth($sizing-xs, 1), nth($sizing-xs, 2), 13px, 24px, $button-border-radius);
+}
+
+.button-sm {
+  @include btn-size(nth($sizing-sm, 1), nth($sizing-sm, 2), $btn-font-size, 24px, $button-border-radius);
+}
+
+.button-lg {
+  @include btn-size-responsive(nth($sizing-lg, 1) * .8, nth($sizing-lg, 2) * .8);
+
+  @media (min-width: $screen-md-min) {
+    @include btn-size(nth($sizing-lg, 1), nth($sizing-lg, 2), 15px, 24px, $button-border-radius);
+  }
+}
+
+.button-xl {
+  @include btn-size-responsive(nth($sizing-xl, 1) * .8, nth($sizing-xl, 2) * .8);
+  @media (min-width: $screen-md-min) {
+    @include btn-size(nth($sizing-xl, 1), nth($sizing-xl, 2), 18px, 24px, $button-border-radius);
+  }
+}
+
+// Button Shapes
+// --------------------------------------------------
+
+.button-circle {
+  border-radius: 35px;
+}
+
+.button-round {
+  border-radius: 10px;
+}
+
+.button-square {
+  border-radius: 0;
+}
+
+// Button Icon styles
+// --------------------------------------------------
+
+.button {
+  &.button-icon {
+    @include display-inline-flex;
+    @include justify-content(center);
+    @include align-items(center);
+    vertical-align: middle;
+
+    .icon {
+      position: relative;
+      display: inline-block;
+      top: 2px;
+      vertical-align: middle;
+      color: inherit;
+      font-size: 1.65em;
+      line-height: 1em;
+    }
+
+    &-left {
+      .icon {
+        padding-right: 11px;
+      }
+    }
+
+    &-right {
+      @include flex-direction(row-reverse);
+      .icon {
+        padding-left: 11px;
+      }
+    }
+
+    &.button-link {
+      .icon {
+        top: 5px;
+        font-size: 1em;
+      }
+    }
+
+    &.button-xs {
+      .icon {
+        top: .1em;
+        font-size: 1.2em;
+        padding-right: 8px;
+      }
+
+      .button-icon-right {
+        padding-left: 8px;
+      }
+    }
+  }
+}
+
+// Button other styles
+// --------------------------------------------------
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.button-link {
+  padding: 0;
+  border: 0;
+}
+
+// Builder button
+.builder-button {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  font-weight: 700;
+  color: $white;
+  transform: translateY(-50%) rotate(180deg);
+  background-image: linear-gradient(to bottom, #00F3F7 0%, #109DF7 51%, #00F3F7 100%);
+  background-size: auto 200%;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+
+  img {
+    max-width: 30px;
+    height: auto;
+    margin-bottom: 8px;
+    transform: rotate(90deg);
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+
+  [data-x-mode="true"] & {
+    display: none;
+  }
+
+  @media (min-width: $screen-sm) {
+    display: inline-flex;
+  }
+}

@@ -1,0 +1,164 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-card-creative
+
+block variables
+	- var activeIndex = 7
+	- var pageName = 'Team'
+
+
+block page
+	// Page Header
+	include ../sections/_header-fullwidth
+
+	section.breadcrumbs-custom.parallax-container(data-parallax-img=src = 'images/bg-image-11.jpg')
+		.parallax-content
+			.shell
+				h2.breadcrumbs-custom__title Team
+
+				ul.breadcrumbs-custom__path
+					li: a(href='index.html') Home
+					li: a(href='#') Elements
+					li.active Team
+
+	section.section.section-xs.bg-white.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Team 4 column
+
+	// Our Professionals
+	+parallax-section({
+		parallaxImage: 'bg-image-3'
+	})
+		.section-sm.text-center
+			.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+				// Section Header
+				.section__header.section_header-noborder
+					h2 Our Professionals
+					.section__header-element
+						a.link.link-arrow(href='team.html'): span View All Team
+
+				.range.range-30.range-flex.range-offset-1
+					.cell-sm-6.cell-lg-3
+						+card-creative({
+							img: 'team-1-115x119',
+							title: 'Sam Wilson',
+							subtitle: 'Founder, CEO'
+						})
+
+					.cell-sm-6.cell-lg-3
+						+card-creative({
+							img: 'team-2-115x119',
+							title: 'Jeffrey Neddery',
+							subtitle: 'Business Development Manager'
+						})
+
+					.cell-sm-6.cell-lg-3
+						+card-creative({
+							img: 'team-3-115x119',
+							title: 'Peter Wilson',
+							subtitle: 'Project Manager'
+						})
+
+					.cell-sm-6.cell-lg-3
+						+card-creative({
+							img: 'team-4-115x119',
+							title: 'Mary Johnson',
+							subtitle: 'Senior Copywriter'
+						})
+
+	section.section.section-xs.bg-white.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Team 3 column
+
+	// Top Management
+	+parallax-section({
+		parallaxImage: 'parallax-4'
+	})
+		.section-md
+			.shell
+				// Section Header
+				.section__header
+					h4 Top Management
+					.section__header-element
+						a.link.link-arrow(href='contacts.html'): span Contact Us
+
+				.range.range-30
+					.cell-sm-6.cell-md-4
+						+card-creative({
+							img: 'team-1-115x119',
+							title: 'Sam Wilson',
+							subtitle: 'Founder, CEO'
+						})
+
+					.cell-sm-6.cell-md-4
+						+card-creative({
+							img: 'team-2-115x119',
+							title: 'Jeffrey Neddery',
+							subtitle: 'Business Development Manager'
+						})
+
+					.cell-sm-6.cell-md-4
+						+card-creative({
+							img: 'team-3-115x119',
+							title: 'Peter Wilson',
+							subtitle: 'Project Manager'
+						})
+	="\n"
+
+	section.section.section-xs.bg-white.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Team boxed light
+
+	// Top Management
+	section.section.section-md.bg-gray-4.novi-background.bg-cover
+		.shell
+			.range.range-30
+				.cell-sm-6.cell-md-4
+					+card-creative({
+						img: 'team-1-115x119',
+						title: 'Sam Wilson',
+						subtitle: 'Founder, CEO'
+					})
+
+				.cell-sm-6.cell-md-4
+					+card-creative({
+						img: 'team-2-115x119',
+						title: 'Jeffrey Neddery',
+						subtitle: 'Business Development Manager'
+					})
+
+				.cell-sm-6.cell-md-4
+					+card-creative({
+						img: 'team-3-115x119',
+						title: 'Peter Wilson',
+						subtitle: 'Project Manager'
+					})
+
+				.cell-sm-6.cell-md-4
+					+card-creative({
+						img: 'team-4-115x119',
+						title: 'Mary Johnson',
+						subtitle: 'Senior Copywriter'
+					})
+
+				.cell-sm-6.cell-md-4
+					+card-creative({
+						img: 'team-5-115x119',
+						title: 'John Smith',
+						subtitle: 'Head of Social Media'
+					})
+
+				.cell-sm-6.cell-md-4
+					+card-creative({
+						img: 'team-6-115x119',
+						title: 'Jane Moore',
+						subtitle: 'Marketing Manager'
+					})
+	="\n"
+
+	// Page Footer
+	include ../sections/_footer-corporate
+
+
+

@@ -1,0 +1,635 @@
+//
+// Lists
+// --------------------------------------------------
+
+// Default list
+//
+
+.list-0 {
+  > li {
+    line-height: 1.3;
+  }
+
+  > li + li { margin-top: 0; }
+}
+
+.list-xxs > li + li { margin-top: 12px; }
+
+.list-md > li + li { margin-top: 12px; }
+
+.list-lg > li + li { margin-top: 25px; }
+
+.list-xl > li + li { margin-top: 35px; }
+
+@media (min-width: $screen-sm-min) {
+  .list-xxs > li + li { margin-top: 14px; }
+  .list-lg > li + li { margin-top: 50px; }
+  .list-xl > li + li { margin-top: 60px; }
+}
+
+@media (min-width: $screen-md-min) {
+  .list-md > li + li { margin-top: 22px; }
+}
+
+
+@media (min-width: $screen-xl-min) {
+  .list-lg > li + li { margin-top: 50px; }
+  .list-xl > li + li { margin-top: 88px; }
+}
+
+// Inline list
+.page {
+  .list-inline-0 {
+    > li { display: inline-block; }
+  }
+
+  .list-inline-xxs {
+    @include inline-list(5px);
+
+    > li {
+      > .icon { vertical-align: middle; }
+    }
+  }
+
+  .list-inline-xs {
+    @include inline-list(10px, 10px);
+
+    > li {
+      > .icon { vertical-align: middle; }
+    }
+  }
+
+  .list-inline-sm {
+    @include inline-list(15px, 10px);
+
+    > li {
+      > .icon { vertical-align: middle; }
+    }
+  }
+}
+
+// Terms lists
+.list-terms {
+  dt + dd { margin-top: 10px; }
+  dd + dt { margin-top: 25px; }
+
+  @media (min-width: $screen-md-min) {
+    dt + dd { margin-top: 18px; }
+    dd + dt { margin-top: 50px; }
+  }
+}
+
+.list-terms-inline {
+  color: $gray-darker;
+
+  dt,
+  dd {
+    display: inline;
+  }
+
+  dt {
+    color: $primary;
+    &:after { content: ':'; }
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Index list
+.index-list {
+  counter-reset: li;
+
+  > li {
+    .list-index-counter {
+      &:before {
+        content: counter(li, decimal-leading-zero);
+        counter-increment: li;
+      }
+    }
+  }
+}
+
+// Marked list
+.list-marked {
+  padding-left: 25px;
+  text-align: left;
+
+  > li {
+    position: relative;
+    padding-left: 25px;
+
+    &:before {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      content: '\f105';
+      font: 400 16px/24px $fa;
+      color: $gray-light;
+    }
+
+    a {
+      color: $gray-darker;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  > li + li {
+    margin-top: 10px;
+  }
+
+  &-1 {
+    > li {
+      &:before {
+        content: '\f00c';
+        color: $primary;
+      }
+    }
+  }
+}
+
+// List ordered
+.list-ordered {
+  padding-left: 25px;
+  counter-reset: li;
+  text-align: left;
+
+  li {
+    position: relative;
+    padding-left: 25px;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 15px;
+      content: counter(li, decimal) '.';
+      counter-increment: li;
+      color: $gray-light;
+    }
+  }
+
+  li + li {
+    margin-top: 10px;
+  }
+}
+
+// List nav
+.list-nav {
+  @include display-flex;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  max-width: 300px;
+  margin-bottom: -10px;
+  margin-left: -5px;
+  transform: translateY(-10px);
+  color: $gray-darker;
+
+  > li {
+    width: (100% / 3);
+    margin-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    letter-spacing: .1em;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  > li.active > a {
+    color: $primary;
+  }
+}
+
+.list-2-columns {
+  padding-left: 0;
+  max-width: 340px;
+  margin-bottom: -10px;
+  @include columns(2);
+  @include break-inside(avoid);
+  transform: translateY(-10px);
+
+  > * {
+    display: inline-block;
+    margin-top: 10px;
+    padding-right: 5px;
+  }
+}
+
+// List marked bordered
+.list-marked-bordered {
+  text-align: left;
+
+  li {
+    a {
+      display: block;
+      padding: 14px 0;
+      line-height: 1.2;
+      border-bottom: 1px solid $gray-4;
+
+      &:before {
+        content: '\f105';
+        position: relative;
+        display: inline-block;
+        padding-right: 10px;
+        font: 400 18px "FontAwesome";
+        line-height: inherit;
+        color: $primary;
+      }
+      
+      .mac-os & {
+        &:before {
+          top: 1px;
+        }
+      }
+
+      span {
+        color: inherit;
+        transition: color .33s;
+      }
+
+      span:first-child {
+        color: $gray-base;
+      }
+
+      &:hover {
+        &, span:nth-child(n) {
+          color: $primary;
+        }
+      }
+    }
+
+    span:not(:last-child) {
+      margin-right: .25em;
+    }
+
+    .count { color: $gray; }
+  }
+}
+
+// Line chart legend
+.line-chart-legend {
+  @include spacing(20px, 5px);
+  li {
+    display: inline-block;
+    font-weight: 500;
+    color: $gray-darker;
+
+    *:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}
+
+.list-legend__mark {
+  display: inline-block;
+  width: 43px;
+  height: 3px;
+  vertical-align: middle;
+}
+
+
+.custom-line {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.15em;
+    z-index: -1;
+    width: 100%;
+    height: 7px;
+    background: $primary;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .custom-line {
+    &:before { height: 14px; }
+  }
+}
+
+
+// List Blocks
+$list-blocks-size: 265px;
+.list-blocks {
+  @include responsive-offset(30px);
+}
+
+.list-blocks__item {
+  @include display-flex;
+  > * { width: 100%; }
+}
+
+.list-blocks__item-inner {
+  padding: 20px 30px;
+}
+
+@media (min-width: $screen-xs-min) {
+  .list-blocks {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(stretch);
+    @include justify-content(flex-start);
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .list-blocks__item {
+    width: 50%;
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .list-blocks__item {
+    width: 25%;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .list-blocks {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .list-blocks__item {
+    position: relative;
+    width: calc(100% / 3 - #{$list-blocks-size / 3} - 1px);
+    padding: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: calc(50% - #{round($list-blocks-size / 2)});
+      transform: translate(-50%, -50%) rotate(-45deg);
+      border-top: 4px solid $primary;
+      width: 40px;
+    }
+
+    &:first-child {
+      width: $list-blocks-size;
+
+      &::before { display: none; }
+    }
+  }
+
+  .list-blocks__item-inner {
+    width: $list-blocks-size;
+    padding: 52px 30px;
+    margin-left: auto;
+  }
+
+  @media (max-width: $screen-lg-max) {
+    $ratio: .85;
+    .list-blocks__item {
+      width: calc(100% / 3 - #{$list-blocks-size / 3 * $ratio} - 1px);
+
+      &:nth-child(4n + 1) {
+        width: round($list-blocks-size * $ratio);
+      }
+
+      &::before {
+        left: calc(50% - #{round($list-blocks-size / 2 * $ratio)});
+      }
+    }
+
+    .list-blocks__item-inner {
+      width: round($list-blocks-size * $ratio);
+    }
+  }
+}
+
+@media (min-width: $screen-xl-min) {
+  .list-blocks {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .list-blocks__item {
+    width: calc(25% + #{round($list-blocks-size / 4)} - 11px);
+
+    &::before {
+      width: 80px;
+    }
+  }
+}
+
+// List Nav Bordered
+.list-nav-bordered {
+  @include display-flex;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include align-items(center);
+  @include justify-content(center);
+  transform: translateY(-10px);
+  margin-bottom: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  text-align: center;
+
+  > li {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0 10px;
+    
+    font-size: 14px;
+   
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: $gray-darker;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  > li.active {
+    a {
+      color: $primary;
+    }
+  }
+
+  @media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+    margin-left: -20px;
+    margin-right: -20px;
+    > li {
+      padding: 0 20px;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    @include justify-content(space-between);
+    text-align: left;
+
+    > li {
+      @include display-flex;
+      @include justify-content(space-between);
+      @include align-items(center);
+      flex: 1 1 auto;
+      padding: 0 10px;
+      font-weight: 500;
+    }
+
+    > li:not(:last-child):after {
+      content: '';
+      height: 20px;
+      border-right: 1px solid $gray;
+      padding: inherit;
+      margin: auto;
+    }
+
+    > li:last-child {
+      flex: 0;
+      padding-right: 20px;
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+    > li {
+      font-size: 16px;
+    }
+  }
+}
+
+// List linked
+.list-linked {
+  text-align: left;
+  > li {
+    position: relative;
+    padding-left: 30px;
+
+    &::before {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      content: '\f0c5';
+      font-family: 'FontAwesome';
+      font-size: 15px;
+      color: $gray-darker;
+    }
+  }
+
+  a {
+    display: block;
+  }
+
+  > li + li {
+    margin-top: 12px;
+  }
+}
+
+.list-linked + .list-linked-header,
+.list-linked-header + .list-linked-header {
+  margin-top: 30px;
+}
+
+@media (min-width: $screen-sm-min) {
+  .list-linked + .list-linked-header {
+    margin-top: 70px;
+  }
+
+  .list-linked-header + .list-linked-header {
+    margin-top: 50px;
+  }
+}
+
+.list-linked-header {
+  position: relative;
+  padding-bottom: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: $gray-darker;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid #e1e1e1;
+  }
+}
+
+// Lists Mods
+.list_darker {
+  li { color: $gray-darker; }
+
+  a {
+    color: inherit;
+
+    &:hover { color: $primary; }
+  }
+
+  li.active a {
+    color: $primary;
+  }
+}
+
+// List decorated
+.list-decorated {
+  > li {
+    position: relative;
+    padding-left: 50px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 28px;
+      height: 4px;
+      background: $primary;
+    }
+  }
+
+  > li + li { margin-top: 20px; }
+}
+
+@media (min-width: $screen-md-min) {
+  .list-decorated {
+    > li + li { margin-top: 35px; }
+  }
+}
+
+.list-contacts {
+  > li + li {
+    margin-top: 10px;
+  }
+}
+
+.list-contacts + .list-social-contact {
+  margin-top: 18px;
+}

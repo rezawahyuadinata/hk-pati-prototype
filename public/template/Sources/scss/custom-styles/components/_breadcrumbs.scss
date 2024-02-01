@@ -1,0 +1,95 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+$breadcrumb-padding-vertical: 8px;
+$breadcrumb-padding-horizontal: 15px;
+$breadcrumb-bg: $gray-darker;
+$breadcrumb-color: $secondary;
+$breadcrumb-active-color: $white;
+//$breadcrumb-separator: "\e8e4";
+
+.breadcrumbs-custom {
+  @extend %context-dark-all;
+  @extend %context-dark-gray;
+  position: relative;
+  padding: 35px 0 40px;
+  vertical-align: middle;
+  text-align: center;
+  background-color: $breadcrumb-bg;
+
+  a {
+    display: inline;
+    vertical-align: middle;
+    &, &:active, &:focus {
+      color: $breadcrumb-color;
+    }
+  }
+
+  li {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 32px;
+    font-size: 14px; 
+    line-height: 1.7;
+    
+    &:after {
+      content: "\e8e4";
+      font-family: 'Material Icons';
+      position: absolute;
+      top: 52%;
+      right: 5px;
+      display: inline-block;
+      font-size: inherit;
+      font-style: normal;
+      color: rgba($white, .5);
+      transform: translateY(-50%);
+    }
+  }
+
+  li:last-child {
+    padding-right: 0;
+    &:after {
+      display: none;
+    }
+  }
+
+  a:hover,
+  li.active {
+    color: $breadcrumb-active-color;
+  }
+}
+
+* + .breadcrumbs-custom__path { margin-top: 14px; }
+
+@media (max-width: $screen-xs-max) {
+  .breadcrumbs-custom__title {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  .breadcrumbs-custom {
+    > li {
+      padding-right: 52px;
+
+      &:after {
+        right: 15px;
+      }
+    }
+  }
+
+  * + .breadcrumbs-custom__path { margin-top: 20px; }
+}
+
+@media (min-width: $screen-sm-min) {
+  .breadcrumbs-custom {
+    padding: 70px 0 80px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .breadcrumbs-custom {
+    padding: 95px 0 110px;
+  }
+}

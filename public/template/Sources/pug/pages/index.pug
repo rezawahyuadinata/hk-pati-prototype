@@ -1,0 +1,308 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-quote-light
+include ../elements/_ui-thumb-zoe
+include ../elements/_ui-card-creative
+include ../elements/_ui-post-modern
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Home'
+
+block page
+  // Page Header
+  include ../sections/_header-fullwidth
+
+  // Swiper
+  section.section.section-layout-1.novi-section.novi-background
+    .section-layout-main
+      .swiper-container.swiper-slider.swiper-slider_style-2(data-loop='true' data-autoplay='5000' data-simulate-touch="false" data-slide-effect='fade')
+        .swiper-wrapper
+          .swiper-slide(data-slide-bg='images/slider-slide-1-1464x660.jpg' )
+            .swiper-slide-caption
+              .shell
+                .range.range-fix
+                  .cell-sm-11.cell-md-10.cell-lg-9
+                    h1(data-caption-animate='fadeInUpSmall')
+                      span Full Cycle
+                      =" "
+                      span.custom-line Production
+                    .object-decorated
+                      h4(data-caption-animate='fadeInRightSmall' data-caption-delay='550') Whatever type of an advertising or promotional campaign you're about to launch, be sure that thanks to our in-depth expertise and the skills that our advertising pros have, it will all be done at one place!
+
+          .swiper-slide(data-slide-bg='images/slider-slide-2-1464x660.jpg')
+            .swiper-slide-caption
+              .shell
+                .range.range-fix
+                  .cell-sm-11.cell-md-10.cell-lg-9
+                    h1(data-caption-animate='fadeInUpSmall')
+                      span.custom-line Advertising
+                      =" "
+                      span in Print
+                    .object-decorated
+                      h4(data-caption-animate='fadeInRightSmall' data-caption-delay='550') We'll help you get your message to your clients by placing advertising in the best print magazines and newspapers in the country!
+
+          .swiper-slide(data-slide-bg='images/slider-slide-3-1464x660.jpg')
+            .swiper-slide-caption
+              .shell
+                .range.range-fix
+                  .cell-sm-11.cell-md-10.cell-lg-9
+                    h1(data-caption-animate='fadeInUpSmall')
+                      span.custom-line Online
+                      =" "
+                      span Advertising
+                    .object-decorated
+                      h4(data-caption-animate='fadeInRightSmall' data-caption-delay='550') Our team is ready to use all its experience to help you promote your products and services online to gain more potential customers than ever.
+
+        .swiper-pagination
+
+    .section-layout-aside
+      .section-layout-aside__item: a.thumb-modern(href='#')
+        +jpg('home-1-538x200', 'thumb-modern__image')
+        .thumb-modern__caption
+          p.thumb-modern__title Strategy
+
+      .section-layout-aside__item: a.thumb-modern(href='#')
+        +jpg('home-2-498x195', 'thumb-modern__image')
+        .thumb-modern__caption
+          p.thumb-modern__title Creativity
+
+      .section-layout-aside__item: a.thumb-modern(href='#')
+        +jpg('home-3-460x195', 'thumb-modern__image')
+        .thumb-modern__caption
+          p.thumb-modern__title Innovation
+  ="\n"
+
+  // Experience since 1999
+  section.section.section-md.bg-white.novi-background.bg-cover
+    .bg-gray-4.novi-background.novi-section
+      .shell-fluid.shell-condensed
+        .range.range-30.range-md-reverse
+          .cell-sm-12.cell-md-6: .section-md.shell-fluid-cell: .box-centered.box-width-1.box-custom
+            h2
+              span Experience
+              span.object-decorated.object-decorated_inline(style='max-width: 125px;')
+                span.heading-5 since 2006
+            p Our company has been the leading provider of advertising services to American companies since 2006. We pay attention to every aspect of our work.
+
+            .group-md.group-middle.button-group
+              a.button.button-darker(href='contacts.html') get a quote
+              p or
+              a.button.button-primary(href='#') get a brochure
+
+          .cell-sm-12.cell-md-6.reveal-flex
+            .thumb-video
+              +jpg('video-preview-959x465', 'thumb-video__image')
+              .thumb-video__caption
+                a.thumb-video__button(href=videoLinkVimeo data-lightgallery='item' data-src=videoLinkVimeo)
+                h4.thumb-video__title Video Presentation
+  ="\n"
+
+  // Counters
+  +parallax-section({
+    parallaxImage: 'parallax-3'
+  })
+    .section-md.text-center
+      .shell.shell-wide
+        ul.list-blocks
+          li.list-blocks__item: .list-blocks__item-inner.novi-background.bg-cover
+            article.box-counter-modern
+              .box-counter-modern__wrap
+                .counter(data-zero='true') 11
+              p.box-counter-modern__title Years in the industry
+
+          li.list-blocks__item: .list-blocks__item-inner.novi-background.bg-cover
+            article.box-counter-modern
+              .box-counter-modern__wrap
+                .counter(data-zero='true') 35
+              p.box-counter-modern__title Partners worldwide
+
+          li.list-blocks__item: .list-blocks__item-inner.novi-background.bg-cover
+            article.box-counter-modern
+              .box-counter-modern__wrap
+                span #
+                span.big 01
+              p.box-counter-modern__title Advertising agency
+
+          li.list-blocks__item: .list-blocks__item-inner.novi-background.bg-cover
+            article.box-counter-modern
+              .box-counter-modern__wrap
+                .counter(data-zero='true') 264
+              p.box-counter-modern__title Successful projects
+  ="\n"
+
+  // Our Projects
+  section.section.section-md.bg-white.novi-background.bg-cover
+    .shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+      // Section Header
+      .section__header
+        h2 Our Projects
+        .section__header-element
+          a.link.link-arrow(href='our-work.html'): span See All Projects
+
+    .shell-fluid
+      .isotope(data-isotope-layout='masonry', data-isotope-group='projects', data-column-class=".isotope-item-etalon")
+        .row.row-no-gutter
+          .col-xs-6.col-md-4.isotope-item
+            +thumb-zoe({
+              img: 'project-1-639x524',
+              title: 'New Office Co.'
+            })
+          .col-xs-6.col-md-2.isotope-item.isotope-item-etalon
+            +thumb-zoe({
+              img: 'project-2-320x262',
+              title: '2K Stationery'
+            })
+          .col-xs-6.col-md-2.isotope-item
+            +thumb-zoe({
+              img: 'project-4-320x524',
+              title: 'iStep'
+            })
+          .col-xs-6.col-md-4.isotope-item
+            +thumb-zoe({
+              img: 'project-3-640x524',
+              title: 'PaperWorks Ltd.'
+            })
+          .col-xs-6.col-md-2.isotope-item
+            +thumb-zoe({
+              img: 'project-5-320x262',
+              title: 'BTS Corp.'
+            })
+  ="\n"
+
+  // Stocks Rating
+  section.section.section-lg.bg-white.novi-background.bg-cover
+    .shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+      .range.range-sm-center.range-md-left.range-md-middle.range-50
+        .cell-sm-10.cell-md-5.cell-lg-5
+          h2 Why Choose Us
+          p We bring our diverse background of advertising, design, branding, public relations, research and strategic planning to work for your company. Not only will your materials look great – they will get results. We don’t create concepts in a vacuum – they fit into the standards of your industry. And once we have a total picture of your company, its target audience and goals, we’ll create a detailed plan including a commitment to stay on budget.
+
+          a.button.button-dark-outline(href='about-us.html') View statistics
+
+        .cell-sm-10.cell-md-7.cell-xl-6: .box-spacer-left.box-spacer-left-lg
+          +png("chart-731x361")
+  ="\n"
+
+  // Our Professionals
+  +parallax-section({
+    parallaxImage: 'bg-image-3'
+  })
+    .section-sm.text-center
+      .shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+        // Section Header
+        .section__header.section_header-noborder
+          h2 Our Professionals
+          .section__header-element
+            a.link.link-arrow(href='team.html'): span View All Team
+
+        .range.range-30.range-flex.range-offset-1
+          .cell-sm-6.cell-lg-3
+            +card-creative({
+              img: 'team-1-115x119',
+              title: 'Sam Wilson',
+              subtitle: 'Founder, CEO'
+            })
+
+          .cell-sm-6.cell-lg-3
+            +card-creative({
+              img: 'team-2-115x119',
+              title: 'Jeffrey Neddery',
+              subtitle: 'Business Development Manager'
+            })
+
+          .cell-sm-6.cell-lg-3
+            +card-creative({
+              img: 'team-3-115x119',
+              title: 'Peter Wilson',
+              subtitle: 'Project Manager'
+            })
+
+          .cell-sm-6.cell-lg-3
+            +card-creative({
+              img: 'team-4-115x119',
+              title: 'Mary Johnson',
+              subtitle: 'Senior Copywriter'
+            })
+
+
+  // Clients
+  section.section.section-md.bg-white.text-center.novi-background.bg-cover
+    .shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+      // Section Header
+      .section__header
+        h2 Clients
+        .section__header-element
+          a.link.link-arrow(href='contacts.html'): span Get a Quote
+
+    .shell-fluid
+      .range.range-condensed.range-md-reverse.range-flex
+        .cell-md-6.bg-gray-dark.bg-image.novi-background.custom-bg-image(style='background-image: url(images/parallax-5.jpg);'): .section-variant-1
+          // Owl Carousel
+          .owl-carousel.owl-carousel_style-3(data-items='1' data-autoplay="true" data-dots='true' data-nav='true' data-stage-padding='0' data-loop='true' data-margin='30' data-mouse-drag="false")
+            .item
+              +quote-light({
+                img: 'testimonials-1-88x88',
+                text: "Randver was a great strategic partner and provided valuable insights to support our turnaround. Their understanding of our business and the marketplace resulted in recommendations to help fuel our success.",
+                cite: "Samuel Johnson",
+                small: "CEO “BTC Ltd.”"
+              })
+
+            .item
+              +quote-light({
+                img: 'testimonials-2-88x88',
+                text: "Your company is very knowledgeable. I love the approach you bring to problems. I have always felt that the people here were part of our team. To this day, that is a huge differentiator.",
+                cite: "John Williams",
+                small: "CEO “InterInverse”"
+              })
+
+            .item
+              +quote-light({
+                img: 'testimonials-3-88x88',
+                text: "This advertising agency has been critical in the growth of our marketing capabilities, especially in a part of our business where we were trying to go from one brand to another very quickly.",
+                cite: "Will Peters",
+                small: "CEO “Betaworks”"
+              })
+
+        .cell-md-6
+          .link-block-group.novi-section
+            a.link-block.link-block-light.novi-background(href='#'): +png('brand-1-216x102')
+            a.link-block.novi-background(href='#'): +png('brand-2-155x34')
+            a.link-block.novi-background(href='#'): +png('brand-3-122x33')
+            a.link-block.link-block-light.novi-background(href='#'): +png('brand-4-100x76')
+  ="\n"
+
+  // News
+  section.section.section-md.bg-white.novi-background.bg-cover
+    .shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+      // Section Header
+      .section__header
+        h2 News
+        .section__header-element
+          a.link.link-arrow(href='news.html'): span Read Our News
+
+      .range.range-center.range-30.range-flex
+        .cell-sm-10.cell-lg-6
+          +post-modern({
+            img: 'post-4-764x215',
+            title: 'Email Newsletters Hit a Speed Bump with Inaccurate Open Rates',
+            text: 'As Clover Letter Emails Got Bigger in size, Founders Say, Its Open Rate Collapsed. Email newsletters are just as effective when working with existing customers, as they were from the very start.Also, the part of the problem...'
+          })
+
+        .cell-sm-5.cell-lg-3
+          +post-modern({
+            img: 'post-1-365x215',
+            title: 'How We Measure the Increasing Vlogs\' Ad Potential',
+            text: 'We have recently finished our research, which is closely connected'
+          })
+
+        .cell-sm-5.cell-lg-3
+          +post-modern({
+            img: 'post-2-365x215',
+            title: 'Digital Marketing Metrics That Really Matter Nowadays',
+            text: 'Marketing is currently in a state of evolution where it is dispensing'
+          })
+
+  // Page Footer
+  include ../sections/_footer-corporate

@@ -1,0 +1,157 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-production-slider
+
+block variables
+  - var activeIndex = 2
+  - var pageName = 'Services'
+
+block page
+  include ../sections/_header-fullwidth
+
+  +breadcrumbs({
+    bgImage: 'bg-image-1',
+    path: [[pageName]]
+  })
+
+  // Our production
+  section.section.section-md.bg-white.novi-background.bg-cover
+    .shell
+      #tabs-production.tabs-custom.tabs-custom-init.tabs-inline
+        // Section Header
+        .section__header
+          h4 Our production
+          .section__header-element
+            // Nav tabs
+            .navigation-custom
+              button.button.navigation-custom__toggle(data-custom-toggle='.navigation-custom__content' data-custom-toggle-hide-on-blur='true') Filter
+              .navigation-custom__content
+                ul.nav.nav-tabs
+                  li.active: a(href='#tabs-production-1' data-toggle='tab') Digital Advertising
+                  li: a(href='#tabs-production-2' data-toggle='tab') Media Buying
+                  li: a(href='#tabs-production-3' data-toggle='tab') Brand Marketing
+                  li: a(href='#tabs-production-4' data-toggle='tab') Market Research
+
+        // Tab panes
+        .tab-content
+          div#tabs-production-1.tab-pane.fade.in.active
+            .layout-horizontal.layout-horizontal_md-reverse
+              .layout-horizontal__main
+                h4 Digital Advertising
+                p Digital advertising services help media & entertainment companies address the profound evolution sweeping across the industry.
+                p We bring essential expertise, tools and services to help businesses transition to the new multimedia advertising model, while offering a complete suite of services across the spectrum of digital capabilities, in order to transform media.
+                a.button.button-primary(href='#') Order services of our company
+
+              .layout-horizontal__aside
+                +service-slider({
+                  number: '1',
+                  media: [
+                    'services-1-565x401',
+                    'services-2-565x401',
+                    'services-3-565x401',
+                    'services-4-565x401',
+                    'services-5-565x401'
+                  ]
+                })
+
+
+          div#tabs-production-2.tab-pane.fade
+            .layout-horizontal.layout-horizontal_md-reverse
+              .layout-horizontal__main
+                h4 Media Buying
+                p Media buying is the procurement of media inventory. The media buying function negotiates price and placement for advertisements.
+                p Media buying differs from “earned” or “owned” media. It falls into the “paid” media category and plays an essential role in marketing. Media buying is the acquisition of media real estate for the most advantageous spaces and timeslots.
+                a.button.button-primary(href='#') Order services of our company
+
+              .layout-horizontal__aside
+                +service-slider({
+                  number: '2',
+                  media: [
+                    'services-3-565x401',
+                    'services-4-565x401',
+                    'services-5-565x401',
+                    'services-6-565x401',
+                    'services-1-565x401'
+                  ]
+                })
+
+          div#tabs-production-3.tab-pane.fade
+            .layout-horizontal.layout-horizontal_md-reverse
+              .layout-horizontal__main
+                h4 Brand Marketing
+                p Your brand is your most valuable intellectual property. It represents your business’s identity and enhances your corporate culture.
+                p When introducing your company to new prospects, customers or distributors, use quality brand marketing to present a strong, positive impression. It’s important to build and implement a strategy that generates the right image.
+                a.button.button-primary(href='#') Order services of our company
+
+              .layout-horizontal__aside
+                +service-slider({
+                  number: '3',
+                  media: [
+                    'services-5-565x401',
+                    'services-6-565x401',
+                    'services-1-565x401',
+                    'services-2-565x401',
+                    'services-3-565x401'
+                  ]
+                })
+
+          div#tabs-production-4.tab-pane.fade
+            .layout-horizontal.layout-horizontal_md-reverse
+              .layout-horizontal__main
+                h4 Market Research
+                p Market research is the process of assessing the viability of a new good or service through research conducted directly with the consumer.
+                p The purpose of this service is to examine the market associated with a particular good or service to determine how the audience will receive it. This can include information for market segmentation and product differentiation.
+                a.button.button-primary(href='#') Order services of our company
+
+              .layout-horizontal__aside
+                +service-slider({
+                  number: '4',
+                  media: [
+                    'services-2-565x401',
+                    'services-3-565x401',
+                    'services-4-565x401',
+                    'services-5-565x401',
+                    'services-6-565x401'
+                  ]
+                })
+
+  ="\n"
+
+  // Counter
+  section.section.section-md.bg-gray-dark.novi-background.bg-cover(style='background-color: #3c3c3c;')
+    .shell
+      .range.range-50
+        .cell-xs-6.cell-md-3
+          // Box counter
+          article.box-counter-modern.box-counter-bordered
+            .box-counter-modern__wrap
+              .counter(data-zero='true') 35
+            p.box-counter-modern__title Partners worldwide
+
+        .cell-xs-6.cell-md-3
+          // Box counter
+          article.box-counter-modern.box-counter-bordered
+            .box-counter-modern__wrap
+              span.small #
+              .big(data-zero='true') 01
+            p.box-counter-modern__title Advertising agency
+
+        .cell-xs-6.cell-md-3
+          // Box counter
+          article.box-counter-modern.box-counter-bordered
+            .box-counter-modern__wrap
+              .counter(data-zero='true') 264
+            p.box-counter-modern__title Successful projects
+
+        .cell-xs-6.cell-md-3
+          // Box counter
+          article.box-counter-modern.box-counter-bordered
+            .box-counter-modern__wrap
+              .counter(data-zero='true') 17
+            p.box-counter-modern__title Years in the industry
+  ="\n"
+
+  // Page Footer
+  include ../sections/_footer-corporate
+

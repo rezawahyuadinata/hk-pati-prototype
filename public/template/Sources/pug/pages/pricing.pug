@@ -1,0 +1,75 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_pricing
+
+block variables
+  - var activeIndex = 6
+  - var pageName = 'Pricing'
+
+block page
+  include ../sections/_header-fullwidth
+
+  +breadcrumbs({
+    bgImage: 'bg-image-1',
+    path: [[mainMenu[activeIndex].title, mainMenu[activeIndex].link], [pageName]]
+  })
+
+  // Pricing
+  section.section.section-md.bg-white
+    .shell
+      .range.range-30
+        .cell-sm-6.cell-md-4.cell-flex
+          +pricing-1({
+            title: 'Media Buying',
+            content: 'Randver does media buying across a majority of modern information mediums.Newspapers, Printed Billboards, TV ad spots, Radio commercials, you just name it! Regardless of a budget, we\'ll book you up!',
+            link: '#'
+          })
+
+        .cell-sm-6.cell-md-4.cell-flex
+          +pricing-1({
+            title: 'Creative Advertising',
+            content: 'Creating content, an image and the big idea for your next advertising campaign is perhaps nothing less, than an artform. Instead of Mona Lisa, thanks to us the next world \'s darling will be your brand!',
+            link: '#'
+          })
+
+        .cell-sm-6.cell-md-4.cell-flex
+          +pricing-1({
+            title: 'Digital',
+            content: 'Using the new media in a successful way is all about crafting a generates leads and sales for your company.We understand all aspects of online marketing: websites, search, social and e-commerce.',
+            link: '#'
+          })
+  ="\n"
+
+  // Pricing
+  section.section.section-md.bg-gray-1
+    .shell
+      .range.range-30
+        .cell-sm-6.cell-md-4.cell-flex
+          +pricing-2({
+            title: 'Radio Advert',
+            price: '4000',
+            content: 'We will be able to coordinate a breakthrough radio advertising, aimed at your target audience!',
+            link: '#'
+          })
+
+        .cell-sm-6.cell-md-4.cell-flex
+          +pricing-2({
+            title: 'TV Advert',
+            titleClass: 'title-dark',
+            price: '7000',
+            content: 'With dozens of those created by our team, your TV spot will shine with us!',
+            link: '#'
+          })
+
+        .cell-sm-6.cell-md-4.cell-flex
+          +pricing-2({
+            title: 'Digital Video Advert',
+            price: '9000',
+            content: 'Digital media are native to our team, which means we will be efficient in them!',
+            link: '#'
+          })
+
+  // Page Footer
+  include ../sections/_footer-corporate
+

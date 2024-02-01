@@ -1,0 +1,138 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-quote-light
+include ../elements/_ui-quote-creative
+
+block variables
+	- var activeIndex = 7
+	- var pageName = 'Timeline'
+
+
+block page
+	// Page Header
+	include ../sections/_header-fullwidth
+
+	section.breadcrumbs-custom.parallax-container(data-parallax-img=src = 'images/bg-image-11.jpg')
+		.parallax-content
+			.shell
+				h2.breadcrumbs-custom__title Timeline
+
+				ul.breadcrumbs-custom__path
+					li: a(href='index.html') Home
+					li: a(href='#') Elements
+					li.active Timeline
+
+	section.section.section-xs.bg-gray-1.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Timeline
+
+	// Our History
+	section.section-md.bg-gray-dark.bg-image.text-center.novi-background.custom-bg-image(style="background-image: url(images/parallax-2.jpg);")
+		.shell
+			h2 Our History
+
+			.timeline
+				.timeline__item-wrap
+					// Timeline item
+					article.timeline__item
+						.timeline__item-header: h5 Beginning,2006
+						.timeline__item-main
+							+jpg('about-4-93x86')
+							p We started to offer American companies top-notch marketing services.
+
+				.timeline__item-wrap
+					// Timeline item
+					article.timeline__item.timeline__item-reverse
+						.timeline__item-header: h5 Customer service,2008
+						.timeline__item-main
+							+jpg('about-5-93x86')
+							p We improved the level of customer service at all offices of our agency.
+
+				.timeline__item-wrap
+					// Timeline item
+					article.timeline__item
+						.timeline__item-header: h5 Industry Leader,2016
+						.timeline__item-main
+							+jpg('about-6-93x86')
+							p In 2016, we were recognized as the advertising industry leader.
+	="\n"
+
+	section.section.section-xs.bg-gray-1.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Timeline with parallax
+
+	// Our History
+	+parallax-section({
+		parallaxImage: 'parallax-2'
+	})
+		.section-md.text-center
+			.shell
+				h2 Our History
+
+				.timeline
+					.timeline__item-wrap
+						// Timeline item
+						article.timeline__item
+							.timeline__item-header: h5 Beginning,2006
+							.timeline__item-main
+								+jpg('about-4-93x86')
+								p We started to offer American companies top-notch marketing services.
+
+					.timeline__item-wrap
+						// Timeline item
+						article.timeline__item.timeline__item-reverse
+							.timeline__item-header: h5 Customer service,2008
+							.timeline__item-main
+								+jpg('about-5-93x86')
+								p We improved the level of customer service at all offices of our agency.
+
+					.timeline__item-wrap
+						// Timeline item
+						article.timeline__item
+							.timeline__item-header: h5 Industry Leader,2016
+							.timeline__item-main
+								+jpg('about-6-93x86')
+								p In 2016, we were recognized as the advertising industry leader.
+	="\n"
+
+	section.section.section-xs.bg-gray-1.novi-background.bg-cover
+		.shell.shell-wide: .range.range-md-center.range-fix: .cell-lg-11
+			h3 Timeline with video background
+
+	// Our History
+	section.section-md.bg-gray-dark.bg-vide.bg-vide-overlay.novi-vide.text-center(data-vide-bg="video/video-bg", data-vide-options="posterType: jpg")
+		.shell
+			h2 Our History
+
+			.timeline
+				.timeline__item-wrap
+					// Timeline item
+					article.timeline__item
+						.timeline__item-header: h5 Beginning,2006
+						.timeline__item-main
+							+jpg('about-4-93x86')
+							p We started to offer American companies top-notch marketing services.
+
+				.timeline__item-wrap
+					// Timeline item
+					article.timeline__item.timeline__item-reverse
+						.timeline__item-header: h5 Customer service,2008
+						.timeline__item-main
+							+jpg('about-5-93x86')
+							p We improved the level of customer service at all offices of our agency.
+
+				.timeline__item-wrap
+					// Timeline item
+					article.timeline__item
+						.timeline__item-header: h5 Industry Leader,2016
+						.timeline__item-main
+							+jpg('about-6-93x86')
+							p In 2016, we were recognized as the advertising industry leader.
+	="\n"
+
+	// Page Footer
+	include ../sections/_footer-corporate
+
+
+

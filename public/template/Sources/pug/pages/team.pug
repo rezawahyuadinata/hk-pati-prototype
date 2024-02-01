@@ -1,0 +1,70 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-card-creative
+
+block variables
+  - var activeIndex = 6
+  - var pageName = 'Team'
+
+block page
+  // Page Header
+  include ../sections/_header-fullwidth
+
+  +breadcrumbs({
+    bgImage: 'bg-image-7',
+    path: [[mainMenu[activeIndex].title, mainMenu[activeIndex].link], [pageName]]
+  })
+    
+  // Top Management
+  section.section.section-md.bg-gray-4.novi-background.bg-cover
+    .shell
+      .range.range-30
+        .cell-sm-6.cell-md-4
+          +card-creative({
+            img: 'team-1-115x119',
+            title: 'Sam Wilson',
+            subtitle: 'Founder, CEO'
+          })
+          
+        .cell-sm-6.cell-md-4
+          +card-creative({
+            img: 'team-2-115x119',
+            title: 'Jeffrey Neddery',
+            subtitle: 'Business Development Manager'
+          })
+          
+        .cell-sm-6.cell-md-4
+          +card-creative({
+            img: 'team-3-115x119',
+            title: 'Peter Wilson',
+            subtitle: 'Project Manager'
+          })
+          
+        .cell-sm-6.cell-md-4
+          +card-creative({
+            img: 'team-4-115x119',
+            title: 'Mary Johnson',
+            subtitle: 'Senior Copywriter'
+          })
+          
+        .cell-sm-6.cell-md-4
+          +card-creative({
+            img: 'team-5-115x119',
+            title: 'John Smith',
+            subtitle: 'Head of Social Media'
+          })
+          
+        .cell-sm-6.cell-md-4
+          +card-creative({
+            img: 'team-6-115x119',
+            title: 'Jane Moore',
+            subtitle: 'Marketing Manager'
+          })
+  ="\n"
+
+  // Page Footer
+  include ../sections/_footer-corporate
+
+
+

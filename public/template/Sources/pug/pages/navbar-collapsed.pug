@@ -1,0 +1,25 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-quote-light
+include ../elements/_ui-quote-creative
+
+block variables
+	- var activeIndex = 7
+	- var pageName = 'Headers'
+	- var headerPage = true
+
+
+block page
+	// Page Header
+	include ../sections/_header-sidebar
+
+	section.breadcrumbs-custom.parallax-container(data-parallax-img=src = 'images/bg-image-11.jpg')
+		.parallax-content
+			.shell
+				h2.breadcrumbs-custom__title Headers
+
+				ul.breadcrumbs-custom__path
+					li: a(href='index.html') Home
+					li: a(href='#') Elements
+					li.active Headers

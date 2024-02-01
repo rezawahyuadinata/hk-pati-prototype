@@ -1,0 +1,49 @@
+//
+// RD Twitter
+// --------------------------------------------------
+
+// Twitter item minimal
+.twitter-item-minimal {
+  .icon {
+    font-size: 18px;
+    color: $primary;
+  }
+  
+  .tweet-user {
+    font-size: 13px;
+    font-weight: 700; 
+    letter-spacing: .1em;
+    a {
+      @include link($primary, $gray-base);
+
+      &:before {
+        content: '-';
+      }
+    }
+  }
+
+  .tweet-text {
+    color: $gray-darker;
+    
+    a {
+      color: $gray;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Offsets
+  * + .tweet-text {
+    margin-top: 4px;
+  }
+
+  * + .tweet-user {
+    margin-top: 8px;
+  }
+}
+
+.twitter-item-minimal + .twitter-item-minimal {
+  margin-top: 22px;
+}
