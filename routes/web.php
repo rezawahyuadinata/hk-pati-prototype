@@ -13,15 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
-Route::get('/product', function () {
-    return view('product');
-});
-Route::get('/industry', function () {
-    return view('industry');
-});
-Route::get('/gallery', function () {
-    return view('gallery');
-});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

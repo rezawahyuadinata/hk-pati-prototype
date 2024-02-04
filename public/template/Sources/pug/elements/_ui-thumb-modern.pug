@@ -1,9 +1,0 @@
-mixin thumb-modern(obj)
-  - var originalSize = obj.original.match('[0-9]+(x)[0-9]+')[0];
-  // Thumb modern
-  a.thumb-modern(href='images/' + obj.original + '.jpg', data-photo-swipe-item, data-size=originalSize, class=obj.modClass)
-    figure.thumb-modern__image-wrap
-      +jpg(obj.img, 'thumb-modern__image')
-    .thumb-modern__caption
-      h4.thumb-modern__title=obj.title
-      p.small=obj.small
