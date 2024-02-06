@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', [IndexController::class, 'index']);
+Route::get('/company', [IndexController::class, 'company']);
+Route::get('/company', [IndexController::class, 'company']);
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    });
+
+    Route::get('/users', function () {
+        return view('admin.users');
+    });
+
+    Route::get('/settings', function () {
+        return view('admin.settings');
+    });
 });
+Route::get('/company', [IndexController::class, 'company']);
+
+
 
 Auth::routes();
 
