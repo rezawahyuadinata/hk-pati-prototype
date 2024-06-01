@@ -8,14 +8,10 @@
         content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    {{-- <meta name="csrf-token" content="{{ csrf_token() }}" <title>{{ config('app.name', 'Laravel') }}</title> --}}
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
     <!-- Scripts -->
     <script src="{{ asset('frontend/js/core.min.js') }}"></script>
     @vite(['resources/sass/app.scss', 'resources/js/frontend.js'])
@@ -69,25 +65,10 @@
                                     <ul class="rd-navbar-items-list">
                                         <li>
                                             <div class="unit flex-row align-items-center unit-spacing-xs">
-                                                <div class="unit__left"><span
-                                                        class="icon icon-sm icon-primary linear-icon-map-marker"></span>
-                                                </div>
                                                 <div class="unit__body">
-                                                    <p><a href="#">Address: 4578 Marmora Road, Glasgow, D04
-                                                            89GR</a></p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="unit flex-row align-items-center unit-spacing-xs">
-                                                <div class="unit__left"><span
-                                                        class="icon icon-sm icon-primary linear-icon-telephone"></span>
-                                                </div>
-                                                <div class="unit__body">
-                                                    <ul class="list-semicolon">
-                                                        <li><a href="tel:#">(800) 123-0045</a></li>
-                                                        <li><a href="tel:#">(800) 123-0045 </a></li>
-                                                    </ul>
+                                                    <p><a href="#">H-ONE KOGI PRIMA AUTO TECHNOLOGIES
+                                                            INDONESIA</a>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </li>
@@ -95,18 +76,7 @@
                                 </div>
                                 <div class="rd-navbar-top-panel__right">
                                     <ul class="list-inline-xxs">
-                                        <li><a class="icon icon-xxs icon-gray-darker fa fa-facebook" href="#"></a>
-                                        </li>
-                                        <li><a class="icon icon-xxs icon-gray-darker fa fa-twitter" href="#"></a>
-                                        </li>
-                                        <li><a class="icon icon-xxs icon-gray-darker fa fa-google-plus"
-                                                href="#"></a></li>
-                                        <li><a class="icon icon-xxs icon-gray-darker fa fa-vimeo" href="#"></a>
-                                        </li>
-                                        <li><a class="icon icon-xxs icon-gray-darker fa fa-youtube" href="#"></a>
-                                        </li>
-                                        <li><a class="icon icon-xxs icon-gray-darker fa fa-pinterest-p"
-                                                href="#"></a></li>
+                                        <li><a href="#">Mon - Fri: 07:00 - 16:00 / Closed on Weekends</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -121,56 +91,35 @@
                                 data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                             <!-- RD Navbar Brand-->
                             <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img
-                                        src="images/logo-default-149x42.png" alt="" width="149"
-                                        height="42" srcset="images/logo-default-298x84.png 2x" /></a></div>
+                                        src="assets/img/logo/logo_hkpati.gif" alt="" width="149"
+                                        height="42" srcset="assets/img/logo/logo_hkpati.gif 2x" /></a></div>
                         </div>
                         <!-- RD Navbar Nav-->
-                        <div class="rd-navbar-nav-wrap rd-navbar-search_not-collapsable">
-                            <!-- Navbar Login-->
-                            <div class="rd-navbar-search_collapsable">
+                        <div class="rd-navbar-nav-wrap rd-navbar-search_collapsable">
+                            <!-- RD Navbar Nav-->
+                            <div class="rd-navbar__element rd-navbar-search_collapsable">
                                 <ul class="rd-navbar-nav">
-                                    @guest
-                                        @if (Route::has('login'))
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('login') }}">{{ __('Join With Us') }}</a>
-                                            </li>
-                                        @endif
-                                    @else
-                                        <li class="nav-item dropdown">
-                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
-                                                role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false" v-pre>
-                                                {{ Auth::user()->name }}
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                                    {{ __('Logout') }}
-                                                </a>
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                    class="d-none">
-                                                    @csrf
-                                                </form>
-                                            </div>
-                                        </li>
-                                    @endguest
+                                    <li><a href="login.html">Join With Us</a></li>
                                 </ul>
                             </div>
-                            {{-- Navbar utama --}}
                             <div class="rd-navbar-search_collapsable">
                                 <ul class="rd-navbar-nav">
-                                    <li class="active"><a href="index.html">Company Overview</a></li>
-                                    <li><a href="about.html">Products & Services</a> </li>
-                                    <li><a href="about.html">Sustainbility</a>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="companyoverview.html">Company Overview</a></li>
+                                    <li><a>Product & Services</a>
                                         <ul class="rd-navbar-dropdown">
-                                            <li><a href="our-team.html">Our Team</a>
+                                            <li><a href="overall.html">Overall Factory Process </a>
                                             </li>
-                                            <li><a href="team-member-profile.html">Team Member Profile</a>
+                                            <li><a href="parts.html">Parts Business</a>
+                                            </li>
+                                            <li><a href="dies.html">Dies Business</a>
+                                            </li>
+                                            <li><a href="casting.html">Casting Business</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="about.html">Gallery</a> </li>
+                                    <li><a href="sustainbility.html">Sustainbility</a></li>
+                                    <li><a href="gallery.html">Gallery</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -180,7 +129,7 @@
         </div>
     </header>
     <div id="app">
-        <main class="py-4">
+        <main class="pb-4">
             @yield('content')
         </main>
         <!-- Page Footer -->
@@ -189,23 +138,29 @@
             <div class="container">
                 <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
                     <div class="col-sm-10 col-md-6 col-lg-10 col-xl-3"><a class="brand" href="index.html"><img
-                                src="images/logo-inverse-149x42.png" alt="" width="149" height="42"
+                                src="assets/img/hero/hkp.PNG" alt="" width="149" height="42"
                                 srcset="images/logo-inverse-298x84.png 2x" /></a>
-                        <p>Our core values have been shaped over more than 10 years of delivering the finest
-                            construction
-                            services to our clients. They stood to the test of time and these principles remain our
-                            bedrock
-                            lynchpins. We never tried to cut on either quality, the pace of work or any other
-                            construction
-                            aspect. We stay true to our full promise of efficiency!</p>
+                        <p>PT HK-PATI is a company engaged in the Dies and Casting sector</p>
                     </div>
                     <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
                         <h6>Navigation</h6>
                         <ul class="list-xxs list-primary">
-                            <li><a href="blog.html">Industry News</a></li>
-                            <li><a href="projects.html">Projects in Development</a></li>
-                            <li><a href="services.html">Our Services</a></li>
-                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="companyoverview.html">Company Overview</a></li>
+                            <li><a href="">Product & Services</a>
+                                <ul class="rd-navbar-dropdown">
+                                    <li><a href="overall.html">Overall Factory Process </a>
+                                    </li>
+                                    <li><a href="parts.html">Parts Business</a>
+                                    </li>
+                                    <li><a href="dies.html">Dies Business</a>
+                                    </li>
+                                    <li><a href="casting.html">Casting Business</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="sustainbility.html">Sustainbility</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
@@ -214,7 +169,8 @@
                             <li>
                                 <dl class="list-terms-minimal">
                                     <dt>Address</dt>
-                                    <dd>4578 Marmora Road, Glasgow, D04 89GR</dd>
+                                    <dd>Jl. Inspeksi Tarum Barat (DEPAN PERURI), Desa Parung Mulya, Kecamatan Ciampel,
+                                        Karawang 41361.</dd>
                                 </dl>
                             </li>
                             <li>
@@ -222,8 +178,7 @@
                                     <dt>Phones</dt>
                                     <dd>
                                         <ul class="list-semicolon">
-                                            <li><a href="tel:#">(800) 123-0045</a></li>
-                                            <li><a href="tel:#">(800) 123-0045</a></li>
+                                            <li><a href="tel:#">+62 267 8630555</a></li>
                                         </ul>
                                     </dd>
                                 </dl>
@@ -237,7 +192,7 @@
                             <li>
                                 <dl class="list-terms-minimal">
                                     <dt>We are open</dt>
-                                    <dd>Mn-Fr: 10 am-8 pm</dd>
+                                    <dd>Mon - Fri: 07:00 - 16:00 / Closed on Weekends</dd>
                                 </dl>
                             </li>
                         </ul>
@@ -245,17 +200,7 @@
                     <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3 google-map-footer-outer">
                         <div class="google-map-footer">
                             <!-- RD Google Map-->
-                            <div class="google-map-container google-map-container-absolute" data-zoom="15"
-                                data-center="9870 St Vincent Place, Glasgow, DC 45 Fr 45."
-                                data-styles="[{&quot;featureType&quot;:&quot;all&quot;,&quot;elementType&quot;:&quot;labels.text.fill&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:36},{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:40}]},{&quot;featureType&quot;:&quot;all&quot;,&quot;elementType&quot;:&quot;labels.text.stroke&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:16}]},{&quot;featureType&quot;:&quot;all&quot;,&quot;elementType&quot;:&quot;labels.icon&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;administrative&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:20}]},{&quot;featureType&quot;:&quot;administrative&quot;,&quot;elementType&quot;:&quot;geometry.stroke&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:17},{&quot;weight&quot;:1.2}]},{&quot;featureType&quot;:&quot;administrative&quot;,&quot;elementType&quot;:&quot;labels&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;administrative.country&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;administrative.country&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;administrative.country&quot;,&quot;elementType&quot;:&quot;labels.text&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;administrative.province&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;administrative.locality&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;simplified&quot;},{&quot;saturation&quot;:&quot;-100&quot;},{&quot;lightness&quot;:&quot;30&quot;}]},{&quot;featureType&quot;:&quot;administrative.neighborhood&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;administrative.land_parcel&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;landscape&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;simplified&quot;},{&quot;gamma&quot;:&quot;0.00&quot;},{&quot;lightness&quot;:&quot;74&quot;}]},{&quot;featureType&quot;:&quot;landscape&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:20}]},{&quot;featureType&quot;:&quot;landscape.man_made&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;lightness&quot;:&quot;3&quot;}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:21}]},{&quot;featureType&quot;:&quot;road&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:17}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.stroke&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:29},{&quot;weight&quot;:0.2}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:18}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:16}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:19}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#000000&quot;},{&quot;lightness&quot;:17}]}]"
-                                data-icon="images/gmap_marker.png" data-icon-active="images/gmap_marker_active.png">
-                                <div class="google-map google-map-absolute"></div>
-                                <ul class="google-map-markers">
-                                    <li data-location="9870 St Vincent Place, Glasgow, DC 45 Fr 45."
-                                        data-description="Address: 4578 Marmora Road, Glasgow, D04 89GR &lt;br&gt; Phones: (800) 123-0045; (800) 123-0046 &lt;br&gt; We are open: Mn-Fr: 10 am-8 pm">
-                                    </li>
-                                </ul>
-                            </div>
+                            <div id="map" style="height: 50vh;"></div>
                         </div>
                     </div>
                 </div>
@@ -266,20 +211,12 @@
             data-preset='{"title":"Footer Corporate","category":"footers","reload":false,"id":"footer-2"}'>
             <div class="container">
                 <div class="footer-corporate__inner">
-                    <p class="rights"><span>Quarter Construction</span><span>&nbsp;</span><span
-                            class="copyright-year"></span>. All Rights Reserved.<span>&nbsp;</span><a
-                            href="privacy-policy.html">Terms of Use and Privacy Policy</a>
-                        <!--{DEL LIVEDEMO TFDEMO USERPACKAGE ZEMEZ_LINK BLD}--><span> .</span><span>
-                            Design&nbsp;by&nbsp;<a href="https://zemez.io/">Zemez</a></span>
+                    <p class="rights"><span>Copyright ©2024 All rights reserved | Created by HK-PATI</span>
                         <!--{DEL}-->
                     </p>
                     <ul class="list-inline-xxs">
-                        <li><a class="icon icon-xxs icon-gray-darker fa fa-facebook" href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-gray-darker fa fa-twitter" href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-gray-darker fa fa-google-plus" href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-gray-darker fa fa-vimeo" href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-gray-darker fa fa-youtube" href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-gray-darker fa fa-pinterest" href="#"></a></li>
+                        <li><a class="icon icon-xxs icon-gray-darker fa fa-globe" href="#"></a></li>
+                        <li><a class="icon icon-xxs icon-gray-darker fa fa-linkedin" href="#"></a></li>
                     </ul>
                 </div>
             </div>
