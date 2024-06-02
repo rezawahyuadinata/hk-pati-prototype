@@ -1,10 +1,8 @@
 import "./bootstrap";
 
-import "../../public/backend/dist/js/adminlte";
-
-
-// Custom backend
-import "../../public/backend/dist/css/adminlte.min.css";
-import "../../public/backend/dist/css/alt/adminlte.components.min.css";
-import "../../public/backend/dist/css/alt/adminlte.core.min.css";
-import "../../public/backend/dist/css/alt/adminlte.plugins.min.css";
+// custom JS
+import "../../public/storage/js/script";
+// Custom frontend
+import "../../public/storage/css/bootstrap.css";
+import "../../public/storage/css/style.css";
+import "../../public/storage/css/fonts.css";
