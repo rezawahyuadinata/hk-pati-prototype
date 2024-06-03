@@ -14,15 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// halaman awalatau landing page
+Route::get('/', [IndexController::class, 'indexPage']);
+Route::get('/company', [IndexController::class, 'companyPage']);
+Route::group(['prefix' => 'product'], function () {
+    Route::get('/', [IndexController::class, 'productPage']);
+    Route::get('/overallfactory', [IndexController::class, 'overfactoryPage']);
+    Route::get('/partsbusiness', [IndexController::class, 'partsPage']);
+    Route::get('/diesbusiness', [IndexController::class, 'diesPage']);
+    Route::get('/castingbusiness', [IndexController::class, 'castingPage']);
+});
 
-Route::get('/', [IndexController::class, 'index']);
-Route::get('/company', [IndexController::class, 'company']);
-Route::get('/company', [IndexController::class, 'company']);
+Route::get('/sustainbility', [IndexController::class, 'sustainbilityPage']);
+Route::get('/contact', [IndexController::class, 'contactPage']);
+Route::get('/gallery', [IndexController::class, 'galleryPage']);
+
+// halaman admin dan lainnya
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', function () {
         return view('admin.dashboard');
     });
-
     Route::get('/users', function () {
         return view('admin.users');
     });
@@ -31,10 +42,3 @@ Route::group(['prefix' => 'admin'], function () {
         return view('admin.settings');
     });
 });
-Route::get('/company', [IndexController::class, 'company']);
-
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
