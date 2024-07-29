@@ -29,6 +29,8 @@ Route::get('/sustainbility', [IndexController::class, 'sustainbilityPage']);
 Route::get('/contact', [IndexController::class, 'contactPage']);
 Route::get('/gallery', [IndexController::class, 'galleryPage']);
 
+
+Auth::routes();
 // halaman admin dan lainnya
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', function () {
@@ -42,3 +44,7 @@ Route::group(['prefix' => 'admin'], function () {
         return view('admin.settings');
     });
 });
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

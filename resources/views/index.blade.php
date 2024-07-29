@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('content')
     <!-- Page-->
@@ -66,19 +66,6 @@
             </div>
         </section>
 
-        <!--<section class="section-xs section-cta bg-image bg-image-7 text-center text-md-left"
-                        data-preset='{"title":"Call to Action 1","category":"call-to-action","reload":false,"id":"cta-1"}'>
-                        <div class="container">
-                            <div class="row row-30 justify-content-between align-items-center">
-                                <div class="col-12 col-md-8">
-                                    <h4>Fast and reliable service for your project!</h4>
-                                </div>
-                                <div class="col-12 col-md-4 text-md-right"><a class="button button-primary" href="about.html">Read
-                                        more</a></div>
-                            </div>
-                        </div>
-                    </section> -->
-
         <!-- Our vision & Mission -->
         <section class="section-md bg-default novi-background text-center"
             data-preset="{&quot;title&quot;:&quot;Content Box 7&quot;,&quot;category&quot;:&quot;content-boxes&quot;,&quot;reload&quot;:false,&quot;id&quot;:&quot;content-box-7&quot;}">
@@ -90,8 +77,10 @@
                     </div>
                     <div class="col-md-11 col-lg-10 col-xl-6">
                         <h4>Vission</h4>
-                        <h6>To become the world's best quality automotive and metal parts manufacturing company in
-                            Indonesia.</h6>
+                        <h6>Our vision is to establish ourselves as the premier manufacturer of world-class, high-quality
+                            automotive and metal parts in Indonesia, recognized for our commitment to excellence,
+                            innovation, and customer satisfaction, while continuously striving to set new standards in the
+                            industry and contribute to the sustainable growth of our community.</h6>
                     </div>
                 </div>
                 <div class="row justify-content-md-center row-30 row-md-50 text-left">
