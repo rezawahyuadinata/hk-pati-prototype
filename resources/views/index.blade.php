@@ -430,6 +430,7 @@
         <!-- Our Client  -->
         <section class="section-md text-center bg-default novi-background"
             data-preset='{"title":"Clients 1","category":"clients","reload":false,"id":"clients-1"}'>
+
             <div class="container">
                 <h4 class="heading-decorated">Our Clients</h4>
                 <div class="row row-30">
@@ -476,6 +477,7 @@
                 </div>
             </div>
         </section>
+
 
 
     </div>

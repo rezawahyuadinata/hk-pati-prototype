@@ -99,8 +99,54 @@
                         <div class="rd-navbar-nav-wrap rd-navbar-search_collapsable">
                             <!-- RD Navbar Nav-->
                             <div class="rd-navbar__element rd-navbar-search_collapsable">
+
                                 <ul class="rd-navbar-nav">
-                                    <li><a href="{{ url('login') }}">Join With Us</a></li>
+                                    @guest
+                                        @if (Route::has('login'))
+                                            <li><a href="{{ url('login') }}">Join With Us</a></li>
+                                        @endif
+                                    @else
+                                        <li><a href="#" onclick="return false;">{{ Auth::user()->name }}</a>
+                                            <ul class="rd-navbar-dropdown">
+                                                <li>
+                                                    <a href="{{ route('home') }}">
+                                                        Dashboard
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ route('logout') }}"
+                                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                        Logout
+                                                    </a>
+                                                </li>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+
+                                            </ul>
+                                        </li>
+                                        {{-- <li class="rd-navbar-dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                                                role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false" v-pre>
+                                                {{ Auth::user()->name }}
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li> --}}
+                                    @endguest
                                 </ul>
                             </div>
                             <div class="rd-navbar-search_collapsable">
@@ -141,7 +187,8 @@
                 <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
                     <div class="col-sm-10 col-md-6 col-lg-10 col-xl-3"><a class="brand"
                             href="{{ url('/') }}"><img src="{{ url('assets/img/hero/hkp.PNG') }}" alt=""
-                                width="149" height="42" srcset="{{ asset('assets/img/hero/hkp.PNG') }} 2x" /></a>
+                                width="149" height="42"
+                                srcset="{{ asset('assets/img/hero/hkp.PNG') }} 2x" /></a>
                         <p>PT HK-PATI is a company engaged in the Dies and Casting sector</p>
                     </div>
                     <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
