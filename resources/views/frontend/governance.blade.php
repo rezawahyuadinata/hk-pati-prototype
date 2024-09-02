@@ -9,7 +9,7 @@
                     <div class="container">
                         <div class="row justify-content-sm-center">
                             <div class="col-md-10 col-xl-8">
-                                <h2 class="heading-decorated">Overall Factory Business</h2>
+                                <h2 class="heading-decorated">Governance</h2>
                             </div>
                         </div>
                     </div>
@@ -17,7 +17,6 @@
             </div>
         </div>
     </section>
-
     <div class="page">
 
     </div>

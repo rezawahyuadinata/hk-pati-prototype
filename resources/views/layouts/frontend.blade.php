@@ -12,8 +12,13 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
     <!-- Scripts -->
     <script src="{{ asset('frontend/js/core.min.js') }}"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     @vite(['resources/sass/app.scss', 'resources/js/frontend.js'])
 </head>
 <style>
@@ -90,7 +95,7 @@
                             <button class="rd-navbar-toggle"
                                 data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                             <!-- RD Navbar Brand-->
-                            <div class="rd-navbar-brand"><a class="brand-n1ame" href="{{ url('index') }}"><img
+                            <div class="rd-navbar-brand"><a class="brand-n1ame" href="{{ url('/') }}"><img
                                         src="{{ asset('assets/img/logo/logo_hkpati.gif') }} " alt=""
                                         width="149" height="42"
                                         srcset="{{ asset('assets/img/logo/logo_hkpati.gif') }}  2x" /></a></div>
@@ -103,7 +108,8 @@
                                 <ul class="rd-navbar-nav">
                                     @guest
                                         @if (Route::has('login'))
-                                            <li><a href="{{ url('login') }}">Join With Us</a></li>
+                                            <li><a class="button button-primary" href="{{ url('login') }}"><span
+                                                        style="color:   white">Login</span></a></li>
                                         @endif
                                     @else
                                         <li><a href="#" onclick="return false;">{{ Auth::user()->name }}</a>
@@ -166,8 +172,18 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{ url('sustainbility') }}">Sustainbility</a></li>
+                                    <li><a>Sustainbility</a>
+                                        <ul class="rd-navbar-dropdown">
+                                            <li><a href="{{ url('sustainbility/environment') }}">Environtment</a>
+                                            </li>
+                                            <li><a href="{{ url('sustainbility/social') }}">Social</a>
+                                            </li>
+                                            <li><a href="{{ url('sustainbility/governance') }}">Governance</a>
+                                            </li>
+                                        </ul>
+                                    </li>
                                     <li><a href="{{ url('gallery') }}">Gallery</a></li>
+                                    <li><a href="{{ url('contactus') }}">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -177,7 +193,7 @@
         </div>
     </header>
     <div id="app">
-        <main class="pb-4">
+        <main class="pb-0">
             @yield('content')
         </main>
         <!-- Page Footer -->
@@ -186,8 +202,8 @@
             <div class="container">
                 <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
                     <div class="col-sm-10 col-md-6 col-lg-10 col-xl-3"><a class="brand"
-                            href="{{ url('/') }}"><img src="{{ url('assets/img/hero/hkp.PNG') }}" alt=""
-                                width="149" height="42"
+                            href="{{ url('/') }}"><img src="{{ url('assets/img/hero/hkp.PNG') }}"
+                                alt="" width="149" height="42"
                                 srcset="{{ asset('assets/img/hero/hkp.PNG') }} 2x" /></a>
                         <p>PT HK-PATI is a company engaged in the Dies and Casting sector</p>
                     </div>
@@ -198,17 +214,28 @@
                             <li><a href="{{ url('company') }}">Company Overview</a></li>
                             <li><a>Product & Services</a>
                                 <ul class="rd-navbar-dropdown">
-                                    <li><a href="{{ url('overallfactory') }}">Overall Factory Process </a>
+                                    <li class="ml-2"><a href="{{ url('overallfactory') }}">- Overall Factory
+                                            Process
+                                        </a>
                                     </li>
-                                    <li><a href="{{ url('partsbusiness') }}">Parts Business</a>
+                                    <li class="ml-2"><a href="{{ url('partsbusiness') }}">- Parts Business</a>
                                     </li>
-                                    <li><a href="{{ url('diesbusiness') }}">Dies Business</a>
+                                    <li class="ml-2"><a href="{{ url('diesbusiness') }}">- Dies Business</a>
                                     </li>
-                                    <li><a href="{{ url('castingbusiness') }}">Casting Business</a>
+                                    <li class="ml-2"><a href="{{ url('castingbusiness') }}">- Casting Business</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ url('sustainbility') }}">Sustainbility</a></li>
+                            <li><a>Sustainbility</a>
+                                <ul class="rd-navbar-dropdown">
+                                    <li class="ml-2"><a href="{{ url('overallfactory') }}">- Environtment</a>
+                                    </li>
+                                    <li class="ml-2"><a href="{{ url('partsbusiness') }}">- Social</a>
+                                    </li>
+                                    <li class="ml-2"><a href="{{ url('diesbusiness') }}">- Governance</a>
+                                    </li>
+                                </ul>
+                            </li>
                             <li><a href="{{ url('gallery') }}">Gallery</a></li>
                         </ul>
                     </div>

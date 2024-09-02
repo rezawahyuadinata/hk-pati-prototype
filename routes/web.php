@@ -18,17 +18,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [IndexController::class, 'indexPage']);
 Route::get('/company', [IndexController::class, 'companyPage']);
 Route::group(['prefix' => 'product'], function () {
-    Route::get('/', [IndexController::class, 'productPage']);
     Route::get('/overallfactory', [IndexController::class, 'overfactoryPage']);
     Route::get('/partsbusiness', [IndexController::class, 'partsPage']);
     Route::get('/diesbusiness', [IndexController::class, 'diesPage']);
     Route::get('/castingbusiness', [IndexController::class, 'castingPage']);
 });
-
-Route::get('/sustainbility', [IndexController::class, 'sustainbilityPage']);
+Route::group(['prefix' => 'sustainbility'], function () {
+    Route::get('/environment', [IndexController::class, 'environmentPage']);
+    Route::get('/social', [IndexController::class, 'socialPage']);
+    Route::get('/governance', [IndexController::class, 'governancePage']);
+});
 Route::get('/contact', [IndexController::class, 'contactPage']);
 Route::get('/gallery', [IndexController::class, 'galleryPage']);
-
+Route::get('/contactus', [IndexController::class, 'contactPage']);
 
 Auth::routes();
 // halaman admin dan lainnya

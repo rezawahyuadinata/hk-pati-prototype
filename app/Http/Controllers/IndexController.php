@@ -14,10 +14,6 @@ class IndexController extends Controller
     {
         return view('frontend.company');
     }
-    public function productPage()
-    {
-        return view('frontend.product');
-    }
     public function overfactoryPage()
     {
         return view('frontend.overallfactory');
@@ -38,9 +34,17 @@ class IndexController extends Controller
     {
         return view('frontend.contact');
     }
-    public function sustainbilityPage()
+    public function environmentPage()
     {
-        return view('frontend.sustainbility');
+        return view('frontend.environment');
+    }
+    public function socialPage()
+    {
+        return view('frontend.social');
+    }
+    public function governancePage()
+    {
+        return view('frontend.governance');
     }
     public function galleryPage()
     {
