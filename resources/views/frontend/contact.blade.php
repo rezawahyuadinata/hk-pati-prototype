@@ -41,34 +41,29 @@
                             <li>
                                 <dl class="list-terms-inline">
                                     <dt>Address</dt>
-                                    <dd>4578 Marmora Road, Glasgow, D04 89GR</dd>
+                                    <dd>Jl. Inspeksi Tarum Barat (DEPAN PERURI), Desa Parung Mulya, Kecamatan Ciampel,
+                                        Karawang 41361.</dd>
                                 </dl>
                             </li>
                             <li>
                                 <dl class="list-terms-inline">
                                     <dt>Phones</dt>
-                                    <dd>
-                                        <ul class="list-semicolon">
-                                            <li><a href="tel:#">(800) 123-0045</a></li>
-                                            <li><a href="tel:#">(800) 123-0045</a></li>
-                                        </ul>
-                                    </dd>
+                                    <dd>+62 267 8630555</dd>
                                 </dl>
                             </li>
                             <li>
                                 <dl class="list-terms-inline">
                                     <dt>We are open</dt>
-                                    <dd>Mn-Fr: 10 am-8 pm</dd>
+                                    <dd>Mon - Fri: 07:00 - 16:00 / Closed on Weekends</dd>
                                 </dl>
                             </li>
                             <li>
                                 <ul class="list-inline-sm">
-                                    <li><a class="icon-sm fa-facebook novi-icon icon" href="#"></a></li>
+                                    <li><a class="icon-sm fa-instagram novi-icon icon" href="#"></a></li>
                                     <li><a class="icon-sm fa-twitter novi-icon icon" href="#"></a></li>
                                     <li><a class="icon-sm fa-google-plus novi-icon icon" href="#"></a></li>
-                                    <li><a class="icon-sm fa-vimeo novi-icon icon" href="#"></a></li>
+                                    <li><a class="icon-sm fa-linkedin novi-icon icon" href="#"></a></li>
                                     <li><a class="icon-sm fa-youtube novi-icon icon" href="#"></a></li>
-                                    <li><a class="icon-sm fa-pinterest-p novi-icon icon" href="#"></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -98,7 +93,7 @@
                 </div>
             </div>
         </section>
-        
+
     </div>
 
     <script>
