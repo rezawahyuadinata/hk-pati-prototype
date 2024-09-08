@@ -22,6 +22,7 @@ Route::group(['prefix' => 'product'], function () {
     Route::get('/partsbusiness', [IndexController::class, 'partsPage']);
     Route::get('/diesbusiness', [IndexController::class, 'diesPage']);
     Route::get('/castingbusiness', [IndexController::class, 'castingPage']);
+    Route::get('/facilitiesquipment', [IndexController::class, 'facilitiesPage']);
 });
 Route::group(['prefix' => 'sustainbility'], function () {
     Route::get('/environment', [IndexController::class, 'environmentPage']);

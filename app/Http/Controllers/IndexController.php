@@ -30,6 +30,10 @@ class IndexController extends Controller
     {
         return view('frontend.casting');
     }
+    public function facilitiesPage()
+    {
+        return view('frontend.facilities');
+    }
     public function contactPage()
     {
         return view('frontend.contact');
@@ -50,4 +54,5 @@ class IndexController extends Controller
     {
         return view('frontend.gallery');
     }
+
 }

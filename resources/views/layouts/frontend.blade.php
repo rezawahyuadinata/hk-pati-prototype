@@ -96,9 +96,10 @@
                                 data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                             <!-- RD Navbar Brand-->
                             <div class="rd-navbar-brand"><a class="brand-n1ame" href="{{ url('/') }}"><img
-                                        src="{{ asset('assets/img/logo/logo_hkpati.gif') }} " alt=""
+                                        src="{{ asset('frontend/assets/img/logo/logo_hkpati.gif') }} " alt=""
                                         width="149" height="42"
-                                        srcset="{{ asset('assets/img/logo/logo_hkpati.gif') }}  2x" /></a></div>
+                                        srcset="{{ asset('frontend/assets/img/logo/logo_hkpati.gif') }}  2x" /></a>
+                            </div>
                         </div>
                         <!-- RD Navbar Nav-->
                         <div class="rd-navbar-nav-wrap rd-navbar-search_collapsable">
@@ -170,6 +171,9 @@
                                             </li>
                                             <li><a href="{{ url('product/castingbusiness') }}">Casting Business</a>
                                             </li>
+                                            <li><a href="{{ url('product/facilitiesquipment') }}">Facilities &
+                                                    Equipment</a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li><a>Sustainbility</a>
@@ -202,7 +206,7 @@
             <div class="container">
                 <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
                     <div class="col-sm-10 col-md-6 col-lg-10 col-xl-3"><a class="brand"
-                            href="{{ url('/') }}"><img src="{{ url('assets/img/hero/hkp.PNG') }}"
+                            href="{{ url('/') }}"><img src="{{ url('frontend/assets/img/hero/hkp.PNG') }}"
                                 alt="" width="149" height="42"
                                 srcset="{{ asset('assets/img/hero/hkp.PNG') }} 2x" /></a>
                         <p>PT HK-PATI is a company engaged in the Dies and Casting sector</p>

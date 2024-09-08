@@ -6,3 +6,4 @@ import "../../public/frontend/js/script";
 import "../../public/frontend/css/bootstrap.css";
 import "../../public/frontend/css/style.css";
 import "../../public/frontend/css/fonts.css";
+import "../../public/assets/css/style.css";

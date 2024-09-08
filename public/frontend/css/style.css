@@ -414,7 +414,7 @@ code,
 .page {
   position: relative;
   overflow: hidden;
-  min-height: 100vh !important;
+  min-height: auto !important;
   opacity: 0;
 }
 
