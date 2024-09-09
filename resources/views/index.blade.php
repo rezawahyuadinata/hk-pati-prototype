@@ -1,17 +1,22 @@
 @extends('layouts.frontend')
 
 @section('content')
+    <style>
+        .custom-table {
+            background-color: white;
+        }
+    </style>
     <!-- Page-->
     <div class="page">
 
         <!-- Swiper -->
         <section>
-            <div class="swiper-container swiper-slider swiper-slider_fullheight bg-gray-dark" data-simulate-touch="false"
-                data-loop="true" data-autoplay="5000"
+            <div class="swiper-container swiper-slider swiper-slider_fullheight bg-gray-dark banner-slider"
+                data-simulate-touch="false" data-loop="true" data-autoplay="5000"
                 data-preset='{"title":"Slider 1","category":"sliders","reload":true,"id":"slider-1"}'>
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide text-center" data-slide-bg="assets/img/hero/hkpati.JPG">
-                        <div class="swiper-slide-caption">
+                    <div class="swiper-slide text-center" data-slide-bg="{{ asset('assets/images/slider/Slider1.png') }}">
+                        <div class="swiper-slide-caption ">
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-10">
@@ -26,7 +31,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide text-center" data-slide-bg="assets/img/hero/part.JPG">
+                    <div class="swiper-slide text-center" data-slide-bg="{{ asset('assets/images/slider/Slider2.png') }}">
                         <div class="swiper-slide-caption">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -41,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide text-center" data-slide-bg="assets/img/hero/part1.jpg">
+                    <div class="swiper-slide text-center" data-slide-bg="{{ asset('assets/images/slider/Slider3.png') }}">
                         <div class="swiper-slide-caption">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -86,17 +91,41 @@
                 <div class="row justify-content-md-center row-30 row-md-50 text-left">
                     <div class="col-md-11 col-lg-10 col-xl-6">
                         <h4>Mission</h4>
-                        <h6 style="font-style: normal;">1. Improving the welfare of stakeholders by prioritizing
-                            occupational health and safety
-                            <br>
-                            2. Increasing customer satisfaction through producing goods of the best quality, competitive
-                            prices and on-time delivery
-                            <br>
-                            3. Continuously develop the quality of human resources
-                            <br>
-                            4. Always innovate with environmentally friendly technology to improve production quality
-                            and work systems in the company
-                        </h6>
+                        <table class="table table-borderless custom-table">
+                            <tr>
+                                <td>1.</td>
+                                <td>
+                                    <h6 style="font-style: normal;">Improving the welfare of stakeholders by prioritizing
+                                        occupational health and safety
+                                    </h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>
+                                    <h6 style="font-style: normal;">Increasing customer satisfaction through producing
+                                        goods of the best quality, competitive
+                                        prices and on-time delivery
+                                    </h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>
+                                    <h6 style="font-style: normal;">Continuously develop the quality of human resources
+                                    </h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td>
+                                    <h6 style="font-style: normal;">Always innovate with environmentally friendly technology
+                                        to improve production quality
+                                        and work systems in the company
+                                    </h6>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="col-md-11 col-lg-10 col-xl-6">
                         <img src="../assets/img/hero/h3_hero.JPG" alt="">

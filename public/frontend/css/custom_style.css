@@ -1,0 +1,27 @@
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.icon-container svg {
+    margin-right: 8px;
+}
+
+.icon-container span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.banner-header {
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5)
+}
+
+.banner-slider {
+    z-index: 999;
+    background: rgb(0, 0, 0)
+}
+
+.custom-table {
+    background-color: white;
+}

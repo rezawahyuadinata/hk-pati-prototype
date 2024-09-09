@@ -1,15 +1,15 @@
 @extends('layouts.frontend')
 
 @section('content')
-    <section class="section parallax-container parallax-disabled" data-parallax-img="images/parallax-1.jpg"
-        style="background-image: url(&quot;images/parallax-1.jpg&quot;);">
+    <section class="section parallax-container parallax-disabled"
+        data-parallax-img="{{ asset('assets/images/banner/company_overview.png') }}">
         <div class="parallax-content parallax-header">
             <div class="parallax-header__inner">
-                <div class="parallax-header__content">
+                <div class="parallax-header__content banner-header">
                     <div class="container">
                         <div class="row justify-content-sm-center">
                             <div class="col-md-10 col-xl-8">
-                                <h2 class="heading-decorated">Social</h2>
+                                <h2 class="heading-decorated" style="color: white">Social</h2>
                             </div>
                         </div>
                     </div>
@@ -23,100 +23,12 @@
             <div class="container">
                 <div class="row justify-content-md-center row-30 row-md-50">
                     <div class="col-md-11 col-lg-10 col-xl-6">
-                        <h4 class="heading-decorated">Material: The Foundation of Excellence</h4>
-                        <p class="heading-6">Raw Material</p>
-                        <p>In the world of automotive manufacturing, the quality of the final product is intrinsically
-                            linked to the quality of the raw materials used. At the heart of our production process lies a
-                            massive bulk of coil, the primary material for our high-quality automotive steel parts. While
-                            these coils may appear identical at first glance, each one is meticulously selected and tailored
-                            to meet the specific requirements of different parts, vehicle types, and markets.</p>
-                    </div>
-                    <div class="col-md-11 col-lg-10 col-xl-6"><img
-                            src="{{ asset('frontend/assets/img/blog/partdivisionnew.jpg') }}" class="fixed-size-img">
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row justify-content-md-center row-30 row-md-50">
-                    <div class="col-md-11 col-lg-10 col-xl-6">
-                        <p class="heading-6">The Diversity of Coil Specifications</p>
-                        <p>Each coil is unique, distinguished by its width, thickness, and surface treatment. These
-                            variations are not arbitrary but are carefully chosen to ensure that every part we produce meets
-                            the highest standards of performance and durability. For instance:
-                        <div class="spec-item">
-                            <span class="spec-title">Coil Width:</span> The width of the coil is selected based on the
-                            dimensions of the part
-                            being manufactured. Wider coils are used for larger components, while narrower coils are ideal
-                            for smaller, more
-                            intricate parts.
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-title">Thickness:</span> The thickness of the coil is crucial for determining
-                            the strength and
-                            flexibility of the final product. Thicker coils provide greater strength and are used for parts
-                            that need to
-                            withstand high stress, while thinner coils offer more flexibility and are used for components
-                            that require
-                            precision and detail.
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-title">Surface Treatment:</span> The surface treatment of the coil is
-                            essential for ensuring
-                            the longevity and aesthetic appeal of the part. Treatments such as galvanization, coating, and
-                            polishing are
-                            applied to protect the steel from corrosion, enhance its appearance, and improve its
-                            performance.
-                        </div>
-                        </p>
-
-                    </div>
-                    <div class="col-md-11 col-lg-10 col-xl-6"><img
-                            src="{{ asset('frontend/assets/img/blog/partdivisionnew.jpg') }}" class="fixed-size-img">
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row justify-content-md-center row-30 row-md-50">
-                    <div class="col-md-11 col-lg-10 col-xl-6">
-                        <p class="heading-6">Tailoring to Market and Vehicle Specifications</p>
-                        <p>Our commitment to excellence extends beyond the selection of raw materials. We understand that
-                            different markets and vehicle types have unique requirements, and we tailor our materials
-                            accordingly. Whether it's a high-performance sports car, a rugged off-road vehicle, or a
-                            reliable family sedan, we ensure that the steel parts we produce are perfectly suited to their
-                            intended application.</p>
-
-                    </div>
-                    <div class="col-md-11 col-lg-10 col-xl-6"><img
-                            src="{{ asset('frontend/assets/img/blog/partdivisionnew.jpg') }}" class="fixed-size-img">
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row justify-content-md-center row-30 row-md-50">
-                    <div class="col-md-11 col-lg-10 col-xl-6">
-                        <p class="heading-6">The Journey from Coil to Component</p>
-                        <p>The journey from raw coil to finished automotive part is a testament to our dedication to quality
-                            and precision. It begins with the careful selection of the coil, followed by a series of
-                            rigorous processes including cutting, shaping, welding, and finishing. Each step is meticulously
-                            monitored and controlled to ensure that the final product meets our exacting standards.</p>
-
-                    </div>
-                    <div class="col-md-11 col-lg-10 col-xl-6"><img
-                            src="{{ asset('frontend/assets/img/blog/partdivisionnew.jpg') }}" class="fixed-size-img">
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row justify-content-md-center row-30 row-md-50">
-                    <div class="col-md-11 col-lg-10 col-xl-6">
-                        <p class="heading-6">Commitment to Sustainability</p>
-                        <p>In addition to our focus on quality, we are also committed to sustainability. We source our raw
-                            materials from suppliers who adhere to strict environmental standards, and we continuously
-                            strive to minimize waste and reduce our carbon footprint throughout the production process.</p>
+                        <h4 class="heading-decorated">Occupational Safety and Health Promotion System</h4>
+                        <p class="heading-6">Safety and Health Promotion</p>
+                        <p>We have established an occupational safety and health committee and system in the company, to
+                            promote safe and healthy work activities, where every activity in the company announces and
+                            reports to prevent work accidents and work-related diseases, carried out with various activities
+                            with the target of creating a workplace which is safe and healthy for our employees.</p>
                     </div>
                     <div class="col-md-11 col-lg-10 col-xl-6"><img
                             src="{{ asset('frontend/assets/img/blog/partdivisionnew.jpg') }}" class="fixed-size-img">
@@ -131,18 +43,61 @@
             <div class="container">
                 <div class="row justify-content-md-center flex-xl-row-reverse row-30 row-md-50">
                     <div class="col-md-11 col-lg-10 col-xl-6">
-                        <h4 class="heading-decorated">Stamping/Press Process</h4>
-                        <p class="heading-6">Stamping Process</p>
-                        <p>Stamping simulation is performed before die production to confirm that parts can be stamped as
-                            intended by the product design data and that no cracks and wrinkles that may affect product
-                            strength occur. During simulation, the product design data and our internal criteria defined by
-                            our accumulated know-how are utilized to digitally guarantee the product accuracy before
-                            physically producing the die. Stamping analysis Our die production process employs simulation
-                            for springback analysis (NOTE1) and virtual finetuning (NOTE2) to shorten the die production
-                            lead-time and enable the swift transition to mass production.</p>
-                        <p>Our die production process employs simulation for springback analysis (NOTE1) and virtual
-                            finetuning (NOTE2) to shorten the die production lead-time and enable the swift transition to
-                            mass production.</p>
+                        <h4 class="heading-decorated">Work accident prevention activities</h4>
+                        <p class="heading-6">Safety Training awareness</p>
+                        <p>In order to prevent work accidents, safety awareness training is given to employees, so that
+                            employees have a better awareness of the dangers around the work area and can control them.
+                            Employees are also given understanding and countermeasures if a work accident occurs to
+                            themselves or their co-workers.</p>
+                    </div>
+                    <div class="col-md-11 col-lg-10 col-xl-6"><img
+                            src="{{ asset('frontend/assets/img/blog/partdivisionnew.jpg') }}" class="fixed-size-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row justify-content-md-center flex-xl-row-reverse row-30 row-md-50">
+                    <div class="col-md-11 col-lg-10 col-xl-6">
+                        <p class="heading-6">National K3 Month</p>
+                        <p>PT. HK-PATI commemorates National K3 Month every year by holding various activities. Such as, K3L
+                            Poster Competition, Hazard Identification Competition in the Work Environment, Quiz Competition,
+                            K3L Creative Video Competition, Blood Donation, and Health Seminars etc. The aim of implementing
+                            K3 month is to increase employee awareness and compliance regarding K3 norms, increase
+                            participation of all parties in realizing the implementation of K3L culture in every activity.
+                        </p>
+                    </div>
+                    <div class="col-md-11 col-lg-10 col-xl-6"><img
+                            src="{{ asset('frontend/assets/img/blog/partdivisionnew.jpg') }}" class="fixed-size-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row justify-content-md-center flex-xl-row-reverse row-30 row-md-50">
+                    <div class="col-md-11 col-lg-10 col-xl-6">
+                        <p class="heading-6">KYT (Kiken Yochi Training)</p>
+                        <p>KYT (Kiken Yochi Training), training for PT employees. HK-PATI is able to predict hidden dangers
+                            that exist in the work area together with team and individual collaboration, taking
+                            preventive/preventive/remedial actions against potential dangers that exist around the work
+                            area.
+                        </p>
+                    </div>
+                    <div class="col-md-11 col-lg-10 col-xl-6"><img
+                            src="{{ asset('frontend/assets/img/blog/partdivisionnew.jpg') }}" class="fixed-size-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row justify-content-md-center flex-xl-row-reverse row-30 row-md-50">
+                    <div class="col-md-11 col-lg-10 col-xl-6">
+                        <p class="heading-6">Driving Safety Training</p>
+                        <p>Safety riding training is given to employees, so that employees remain aware of the importance of
+                            driving safely, for the safety of themselves and other drivers, employees are given an
+                            understanding of how to ride well, the dangers that exist on the road and also precautions to
+                            prevent dangers that exist on the road.
+                        </p>
                     </div>
                     <div class="col-md-11 col-lg-10 col-xl-6"><img
                             src="{{ asset('frontend/assets/img/blog/partdivisionnew.jpg') }}" class="fixed-size-img">
@@ -156,14 +111,12 @@
             <div class="container">
                 <div class="row justify-content-md-center row-30 row-md-50">
                     <div class="col-md-11 col-lg-10 col-xl-6">
-                        <h4 class="heading-decorated">Welding Process</h4>
-                        <p class="heading-6">Perform Welding process</p>
-                        <p>HK-PATI has been actively using simulation technologies for welding as well to enable mass
-                            production of newly designed parts in a shorter time. Our accumulated know-how and technical
-                            data are referenced to plan and construct production lines with high efficiency and accuracy.
-                            Product design data are also shared by and linked between the die designing and production
-                            process and the welding line simulation and robot programming process, so that the lead-time to
-                            completion of respective processes is shortened.</p>
+                        <h4 class="heading-decorated">Employee Health Check</h4>
+                        <p class="heading-6">Annual Employee Health Check</p>
+                        <p>Every year, all employees undergo a medical check-up (preventive health examination for diseases
+                            related to lifestyle and work environment). Based on the examination findings, if a serious
+                            illness is found, the employee will be consulted by the company doctor and the HSE Team, then
+                            referred for further examination at the hospital.</p>
                     </div>
                     <div class="col-md-11 col-lg-10 col-xl-6"><img
                             src="{{ asset('frontend/assets/img/blog/partdivisionnew.jpg') }}" class="fixed-size-img">
@@ -177,7 +130,7 @@
             <div class="container">
                 <div class="row justify-content-md-center flex-xl-row-reverse row-30 row-md-50">
                     <div class="col-md-11 col-lg-10 col-xl-6">
-                        <h4 class="heading-decorated">Quality Control & Quality Assurance</h4>
+                        <h4 class="heading-decorated">Health Management Activities</h4>
                         <p class="heading-6">Basic Concept</p>
                         <p>The quality and safety required of automotive frames, which are our flagship products, not only
                             lead directly to value of our customers’ products, but also assume the important mission of

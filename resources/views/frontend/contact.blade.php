@@ -6,15 +6,15 @@
             height: 600px
         }
     </style>
-    <section class="section parallax-container parallax-disabled" data-parallax-img="images/parallax-1.jpg"
-        style="background-image: url(&quot;images/parallax-1.jpg&quot;);">
+    <section class="section parallax-container parallax-disabled"
+        data-parallax-img="{{ asset('assets/images/banner/company_overview.png') }}">
         <div class="parallax-content parallax-header">
             <div class="parallax-header__inner">
-                <div class="parallax-header__content">
+                <div class="parallax-header__content banner-header">
                     <div class="container">
                         <div class="row justify-content-sm-center">
                             <div class="col-md-10 col-xl-8">
-                                <h2 class="heading-decorated">Contact Us</h2>
+                                <h2 class="heading-decorated" style="color: white">Contact Us</h2>
                             </div>
                         </div>
                     </div>
